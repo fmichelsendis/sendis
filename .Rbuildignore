@@ -1,0 +1,11 @@
+^sendis\.Rproj$
+^\.Rproj\.user$
+^.*\.Rproj$
+^README\.Rmd$
+^README-.*\.png$
+^\.travis\.yml$
+docs/*
+data-raw/*
+pkgdown/*
+_pkgdown.yml
+
