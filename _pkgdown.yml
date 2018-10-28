@@ -4,7 +4,7 @@ template:
     bootswatch: spacelab
     ganalysitcs: UA-79571278-3
 development:
-  mode: release
+  mode: unreleased
 
 navbar:
  right:
