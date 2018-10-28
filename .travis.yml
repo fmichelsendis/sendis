@@ -13,5 +13,8 @@ deploy:
   skip_cleanup: true
   github-token: $GITHUB_OAUTH_TOKEN
   keep-history: true
-  target-branch: master
+  local-dir: docs
+  on: 
+    branch: master
+
 
