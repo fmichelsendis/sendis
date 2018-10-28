@@ -15,10 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Sendis 
  
-New page 20:03 WAAA
+How to make badge green
 
 
-This was deployed by travis to pages
-
-## Including Plots
  
