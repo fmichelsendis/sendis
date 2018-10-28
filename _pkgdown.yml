@@ -1,8 +1,25 @@
 title : sendis
 template:
   params:
-    bootswatch: cerulean
+    bootswatch: spacelab
     ganalysitcs: UA-79571278-3
 development:
   mode: release
 
+navbar:
+ right:
+    - text: "App"
+      icon: fa-bar-chart
+      href: app.html
+    - icon: fa-github fa-lg
+      href: https://github.com/fmichelsendis/sendis
+ 
+ 
+  
+      
+      
+      
+      
+      
+      
+      

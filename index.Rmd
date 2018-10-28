@@ -2,7 +2,10 @@
 title: "README"
 author: "Franco Michel-Sendis"
 date: "26/10/2018"
-output: html_document
+output:
+  html_document:
+    includes:
+       in_header: myheader.html 
 ---
 
 ```{r setup, include=FALSE}
@@ -11,6 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 [![Build Status](https://travis-ci.org/fmichelsendis/sendis.svg?branch=master)](https://travis-ci.org/fmichelsendis/sendis)
+ 
 
 
 ## Sendis 
