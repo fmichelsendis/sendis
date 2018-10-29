@@ -5,8 +5,16 @@
 The aim of sendis is to  by providing data and R functions that expedite common tasks.  
 
 
-
 ## Installation 
+
+```r
+
+# Install the development version from GitHub:
+# install.packages("devtools")
+devtools::install_github("fmichelsendis/sendis")
+
+```
+
 
 ## Usage
 
@@ -15,4 +23,4 @@ The aim of sendis is to  by providing data and R functions that expedite common 
 
 
  
-## learning more
+## Learning more
