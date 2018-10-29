@@ -1,4 +1,4 @@
-# sendis <img src="man/figures/logo.png" align="right" height = 150/>
+# sendis <img src="man/figures/sendis-favicon.png" align="right" height = 100/>
 
 [![Build Status](https://travis-ci.org/fmichelsendis/sendis.svg?branch=master)](https://travis-ci.org/fmichelsendis/sendis)
 
