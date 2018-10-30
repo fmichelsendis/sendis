@@ -7,9 +7,11 @@ output:
     includes:
        in_header: myheader.html 
 ---
-# sendis <img src="man/figures/sendis_96x96.png" align="right" height = 40/>
-
-<img src="man/figures/sendis.png" align="left" height = 40/>
+<link rel="shortcut icon" type="image/x-icon" href="man/figures/favicon.ico">
+<br><br>
+<img src="man/figures/sendis.png" align="left" height = 40/> 
+<br><br>
+<hr>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -20,9 +22,7 @@ knitr::opts_chunk$set(echo = TRUE)
  
 
 
-## Sendis 
- 
-How to make badge green
+## Under construction
 
 
  
