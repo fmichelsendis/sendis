@@ -7,6 +7,9 @@ output:
     includes:
        in_header: myheader.html 
 ---
+# sendis <img src="man/figures/sendis_96x96.png" align="right" height = 40/>
+
+<img src="man/figures/sendis.png" align="left" height = 40/>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
