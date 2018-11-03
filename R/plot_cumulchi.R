@@ -1,16 +1,4 @@
-#' plot cumulative Chi-square function
-#'
-#' @param df dataframe to consider (no default),
-#' @import data.table
-#' @import dplyr
-#' @import plotly
-#' @import splitstackshape
-#' @export
-#' @examples
-#'
-#' p<-plot_cumulchi(sendis)
-#' print(p)
-#'
+
 plot_cumulchi<- function(df){
 y_layout<-list(
     title='Chi2 build-up',

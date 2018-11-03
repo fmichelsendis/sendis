@@ -1,17 +1,18 @@
 ---
-title: "README"
-author: "Franco Michel-Sendis"
-date: "26/10/2018"
 output:
   html_document:
     includes:
        in_header: myheader.html 
 ---
-<link rel="shortcut icon" type="image/x-icon" href="man/figures/favicon.ico">
+<!-- <link rel="shortcut icon" type="image/x-icon"href="man/figures/favicon.ico"> -->
+
 <br><br>
 <img src="man/figures/sendis.png" align="left" height = 40/> 
 <br><br>
 <hr>
+
+
+## This is index.Rmd
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
