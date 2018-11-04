@@ -10,26 +10,12 @@
 #'
 #'
 import_userdata<- function(filename){
-
-  user_df<-fread(filename)
-  user_df$V1<-NULL
-  user_df[user_df==""]<-NA
+ 
   
-  missing<-""
-  
-  if(!("INST" %in% names(user_df)))   {missing<-paste(missing, "INST")}
-  if(!("FULLID" %in% names(user_df))) {missing<-paste(missing, "FULLID")}
-  if(!("MODEL" %in% names(user_df)))  {missing<-paste(missing, "MODEL")}
-  if(!("CODE" %in% names(user_df)))   {missing<-paste(missing, "CODE")}
-  if(!("LIBVER" %in% names(user_df))) {missing<-paste(missing, "LIBVER")}
-  if(!("CALCVAL" %in% names(user_df))) {missing<-paste(missing, "CALCVAL")}
-  if(!("CALCERR" %in% names(user_df))) {missing<-paste(missing, "CALCERR")} 
-  
-  
-  if(missing==""){
-    # user_df$LIBVERA<-user_df$LIBVER
-    # user_df<-cSplit(as.data.table(user_df), "LIBVERA", "-")
-    # setnames(user_df, old=c("LIBVERA_1","LIBVERA_2"), new=c("LIB", "VER"))
+ 
+    user_df$LIBVERA<-user_df$LIBVER
+    user_df<-cSplit(as.data.table(user_df), "LIBVERA", "-")
+    setnames(user_df, old=c("LIBVERA_1","LIBVERA_2"), new=c("LIB", "VER"))
     
     user_df$FULLIDA<-user_df$FULLID
     user_df<-cSplit(as.data.table(user_df), "FULLIDA", "-")
@@ -38,13 +24,15 @@ import_userdata<- function(filename){
     user_df<-user_df%>%mutate(CASETYPE = paste0(.data$FISS,"-",.data$FORM,"-",
                                                 .data$SPEC))
     
-    return(
-      user_df%>%select("FULLID", "CASETYPE", "FISS", "FORM", "SPEC", "MODEL", "CODE", "LIBVER", "CALCVAL", "CALCERR")
-      )
-    }
-  if(missing!=""){
-    error_msg<-paste0(missing, " columns not found")
-    stop(error_msg)
-  }
-   
+    
+    
+    if(check_format_errors(filename)==0){
+      user_df<-fread(filename)
+      user_df$V1<-NULL
+      user_df[user_df==""]<-NA
+      return(user_df%>%
+          select(INST, FULLID, MODEL, CODE, LIBVER, CALCVAL, CALCERR))
+      }
+    
+ 
 }

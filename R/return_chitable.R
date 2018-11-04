@@ -7,7 +7,7 @@
 #' @export
 return_chitable<- function(df){
 
-  chis<-unique(df%>%select(.data$INST, .data$LIBVER, .data$NCASES, .data$CHISQ))%>%
+  chis<-unique(df%>%select(INST, LIBVER, NCASES, CHISQ))%>%
     spread(.data$LIBVER, .data$CHISQ)
   
   return(chis)
