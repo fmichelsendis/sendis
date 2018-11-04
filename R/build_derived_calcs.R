@@ -45,4 +45,4 @@ build_derived_calcs<- function(df){
       )
   
   return(df2)
-}
+} 
