@@ -40,8 +40,8 @@ build_derived_calcs<- function(df){
     mutate(
       COVERE = .data$CALCVAL/.data$EXPVAL,
       RESIDUAL = (.data$CALCVAL-.data$EXPVAL)/sqrt(.data$EXPERR^2 + .data$CALCERR^2),
-      CUMUL=cumsum(.data$RESIDUAL^2/.data$NCASES),
-      CHISQ= mean(.data$RESIDUAL^2)
+      CUMUL= round(cumsum(.data$RESIDUAL^2/.data$NCASES),2),
+      CHISQ= round(mean(.data$RESIDUAL^2),2)
       )
   
   return(df2)
