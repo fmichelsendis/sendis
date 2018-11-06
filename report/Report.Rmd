@@ -1,0 +1,199 @@
+---
+#output: html_document
+output: 
+  pdf_document: 
+    keep_tex: true
+    fig_caption: true
+    number_sections: false
+    df_print: kable 
+    includes:
+          in_header: styles/header.tex
+fontsize: 11pt
+documentclass: article # or report
+sansfont: Helvetica #Calibri Light
+font-family: 'phv' #'Helvetica'
+always_allow_html: yes
+#classoption: twocolumn
+header-includes:
+ - \usepackage{helvet}
+ - \renewcommand{\familydefault}{\sfdefault} 
+#- \setlength{\columnsep}{15pt}
+params:
+    date : !r Sys.time() 
+    printcode : FALSE
+---
+
+ 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = params$printcode)
+knitr::opts_chunk$set(warning = FALSE)
+library(knitr)
+library(sendis)
+library(ggplot2)
+library(plotly)
+library(dplyr)
+library(kableExtra) 
+library(data.table)
+library(scales)
+
+return_kable<-function(df, caption=""){
+  
+k<-kable(df, 
+      escape = FALSE, 
+      caption = caption,
+      format = "latex", 
+      booktabs = TRUE,
+      linesep ="")%>%
+  kable_styling(full_width = TRUE,
+                font_size = 8, 
+                latex_options = c("scale_down", 
+                                  "striped",
+                                  "hold_position",
+                                  "repeat_header")
+                )
+  return(k)
+}
+
+
+
+```
+
+<br>
+
+<br>
+ 
+# Diagnostics Report at time : `r params$date`
+
+This is just some text to display. 
+
+## Tables 
+
+
+```{r echo = FALSE, results = 'asis'}
+options(knitr.kable.NA = '')
+
+df<-sendis%>%
+  filter(.data$INST!="PSI")%>%
+  filter(.data$LIBVER!="JENDL-4.0u")
+
+table<-return_common_suite(df, "NEA")%>%
+  build_splitcolumns()%>%
+  build_derived_calcs()%>%
+  mutate(
+    CHISQ = cell_spec(CHISQ, "latex", color = ifelse(CHISQ > 10, "red", "darkgray"))
+  )%>%
+  return_chitable()%>%
+  rename_table_header()
+ 
+return_kable(table, caption = "Total $\\chi^2$ values")%>%
+  add_header_above(c(" ", " " =1, "ENDFB" = 2, "JEFF" = 7, "JENDL"=1))%>%
+  row_spec(0, bold = TRUE) %>%
+  row_spec(5, bold = TRUE) %>%
+  column_spec(1, width = "1.5cm")%>%
+  footnote(
+           symbol = c("Footnote Symbol 1; ", "Footnote Symbol 2"),
+           footnote_as_chunk = T, title_format = c("italic", "underline"))
+
+```
+
+### Plots
+
+```{r echo = FALSE}
+
+df<-sendis%>%build_splitcolumns()%>%filter(LIB=="JEFF", INST=="NEA") 
+df$ZERO<-0
+
+g<-ggplot(df, aes(x=ZERO, y= RESIDUAL, shape= FISS, colour= SPEC)) +
+  geom_jitter(width=0.001, height=0) +
+  facet_grid(.~VER)+
+  geom_hline(yintercept =  3, lty = "dotted") +
+  geom_hline(yintercept = -3, lty = "dotted") +
+  ylim(-25,25)+
+  #scale_y_continuous(breaks = seq(-25, 25, by = 5))+
+  scale_x_continuous(breaks = seq(-10, 10, by = 20))+
+  labs(y = "$\\Delta$ \n",
+       x = "\nRatio dette publique / produit intérieur brut (%)",
+       title = "Données Reinhart et Rogoff corrigées, 1946-2009\n") +
+  theme_bw()+
+  theme(
+    legend.title = element_blank(),
+    panel.grid = element_blank()
+    # axis.title.x=element_blank(),
+    # axis.text.x=element_blank(),
+    # axis.ticks.x=element_blank()
+    )
+
+g
+
+
+
+```
+
+
+
+
+## Suspicious Outliers
+
+### Plots
+
+```{r echo = FALSE}
+
+df<-sendis%>%build_splitcolumns()%>%filter(LIB=="JEFF", INST=="NEA") 
+
+g<-ggplot(df, aes(x= EALF)) +
+  geom_point(aes(y= COVERE, colour= LIBVER, shape= FISS)) +
+  geom_ribbon(aes(ymin = 1-EXPERR, ymax= 1+EXPERR), fill="#406dad", alpha=0.1) +
+    labs(x = "Average energy of neutron causing fission (eV)", y = "C/E")+
+    scale_x_log10(breaks = trans_breaks("log10", function(x) 10^x),
+                  labels = trans_format("log10", math_format(10^.x)))+
+    annotation_logticks(sides = "b") +
+    theme_bw()+ theme(legend.title = element_blank())
+
+g
+
+
+
+```
+
+### Table 
+
+Between NEA calcs and NRG calcs for same library 
+
+```{r echo = FALSE, results = 'asis'}
+outliers<-sendis%>%
+  build_splitcolumns()%>%
+  return_discrepant(INST1 = "NEA", INST2 = "NRG", sigma_treshold = 3)%>%
+  select(-FULLID, -EALF, -CODE.x, -CODE.y, -CALCERR.x, -CALCERR.y, -TOT_STAT_ERR_PCM)%>%
+  rename( 'Delta (pcm)' = DELTA_PCM,
+          'k(NEA)' = CALCVAL.x,
+          'k(NRG)' = CALCVAL.y,
+          Nsigmas = DELTA_SIGMA_STAT)%>%
+  arrange(SHORTID, -Nsigmas)%>%
+  unique()
+
+kable(outliers, 
+      escape = FALSE, 
+      format = "latex", 
+      booktabs = TRUE,
+      row.names = FALSE,
+      linesep ="")%>%
+  kable_styling(
+    full_width = TRUE,
+    font_size = 8,
+    latex_options = c("scale_down",
+                      "striped",
+                      "hold_position",
+                      "repeat_header")
+    )%>%
+  row_spec(0, bold = TRUE) %>%
+  column_spec(2, width = "2cm")%>%
+  column_spec(3, width = "2cm")
+
+
+
+
+
+
+```
+

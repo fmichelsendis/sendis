@@ -28,7 +28,7 @@
 build_derived_calcs<- function(df){
   
   #create a vector for number of cases calculated for each LIBVER
-  d<-dplyr::count(df, .data$INST, .data$LIBVER)  # d has 3 columns : INST, LIBVER and n
+  d<-dplyr::count(ungroup(df), .data$INST, .data$LIBVER)  # d has 3 columns : INST, LIBVER and n
   d$NCASES<-d$n  #change name of computed n to NCASES
   d$n<-NULL
   df2<-merge(df, d, by = c("INST", "LIBVER"))
@@ -40,7 +40,7 @@ build_derived_calcs<- function(df){
     mutate(
       COVERE = .data$CALCVAL/.data$EXPVAL,
       RESIDUAL = (.data$CALCVAL-.data$EXPVAL)/sqrt(.data$EXPERR^2 + .data$CALCERR^2),
-      CUMUL= round(cumsum(.data$RESIDUAL^2/.data$NCASES),2),
+      CUMUL= round(cumsum(.data$RESIDUAL^2/NCASES),2),
       CHISQ= round(mean(.data$RESIDUAL^2),2)
       )
   

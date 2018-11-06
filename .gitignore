@@ -3,3 +3,7 @@
 .RData
 sendis.Rproj
 docs/*
+report/Report.tex
+report/Report.pdf
+report/*.html
+report/Report_files/
