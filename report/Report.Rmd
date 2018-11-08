@@ -189,16 +189,40 @@ g
 
 ```
 
+## Chunks
 
+```{r echo=FALSE}
+
+dfl<-fread("../data-raw/libs.csv")
+dfl<-filter(dfl, LIB!="TENDL", LIB!="EAF", LIB!="FENDL", LIB!="ROSFOND")
+g<-ggplot(dfl, aes(x=YEAR, y=NUMCHUNKS, colour=LIB))+
+  geom_point(aes(size = 1, alpha=0.5))+
+  geom_line(aes(size=0.5))+ 
+   theme_bw()+ theme(legend.title = element_blank())+
+   scale_x_continuous(breaks = seq(1990, 2021, by = 5))+
+  labs(x="\nYear of release", y= "Number of data segments\n")
+  
+g
+
+ggsave(filename = "plot2.png", width = 16, units = "cm", dpi = 450)
 
 
 ## Suspicious Outliers
 
 ### Plots
 
+```
+
+
+
+
 ```{r echo = FALSE}
 
-df<-sendis%>%filter(LIB=="JEFF", INST=="NEA") 
+df<-sendis%>%filter(LIB=="JEFF"| LIB=="JENDL" | LIB=="ENDFB", INST=="NEA")%>%
+  filter(FISS!="MIX")%>%
+  filter(FISS!="SPEC")%>%
+  filter(FISS!="U233")%>%
+  filter(!(VER %in% c("3.0", "3.1", "3.2", "3.1.2")))
 
 g<-ggplot(df, aes(x= EALF)) +
   geom_point(aes(y= COVERE, colour= LIBVER, shape= FISS)) +
@@ -210,7 +234,7 @@ g<-ggplot(df, aes(x= EALF)) +
     theme_bw()+ theme(legend.title = element_blank())
 
 g
-
+ggsave(filename = "plot1.png", width = 15, units = "cm", dpi = 400)  
 
 
 ```
