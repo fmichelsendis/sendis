@@ -1,10 +1,10 @@
 ---
-title: "Using the sendis package"
-author: "F. Michel-Sendis"
+title: "Article 1"
+author: "Vignette Author"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Using the sendis package}
+  %\VignetteIndexEntry{Vignette Title}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

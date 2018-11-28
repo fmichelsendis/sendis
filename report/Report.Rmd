@@ -36,6 +36,7 @@ library(dplyr)
 library(kableExtra) 
 library(data.table)
 library(scales)
+library(latex2exp)
 
 return_kable<-function(df, caption=""){
   
@@ -55,7 +56,9 @@ k<-kable(df,
   return(k)
 }
 
-
+sens<-fread("../data-raw/fms_all_sens.csv")%>%
+  filter(REACTION=="total")%>%
+  select(-V1, -KSENS1, -KSENS2, -KSENS3)
 
 ```
 
@@ -71,6 +74,7 @@ This is just some text to display.
 
 
 ```{r echo = FALSE, results = 'asis'}
+
 options(knitr.kable.NA = '')
 
 df<-sendis%>%
@@ -110,6 +114,92 @@ g<-ggplot(df, aes(x=FULLID, y=CUMUL, colour= LIBVER)) +
   theme_bw()
 
 g
+
+```
+
+
+## Isotopes sensitivities
+
+```{r echo = FALSE, fig.width=9, fig.height=12, fig.align="center"}
+
+
+
+df<-sendis%>%
+  filter(LIBVER=="JEFF-3.3"|LIBVER=="JEFF-2.2")
+  
+df<-merge(df, sens, all.x=TRUE, all.y =FALSE)%>%
+  filter(KSENSTOT>0.3)
+  #filter(ISOTOPE=="U233" | ISOTOPE=="Be0")
+
+p<-ggplot(df, 
+          aes(x=ISOTOPE, y=RESIDUAL)) + 
+  geom_boxplot(aes(shape=LIBVER, colour= ISOTOPE)) +  
+  theme_bw() 
+ 
+p
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Plot 0
+
+```{r echo = FALSE, fig.width=9, fig.height=12, fig.align="center"}
+
+
+
+df<-sendis%>%
+  mutate(EVALCASE = paste0(CASETYPE,"-",CASE))%>%
+  #df<-sendis%>% #build_splitcolumns()%>%
+  filter(LIBVER=="JEFF-2.2"|LIBVER=="JEFF-3.3", INST=="NEA")%>% 
+  #filter(INST=="NRG")%>%
+  group_by(EVALCASE)%>%
+  mutate(
+    MEAN_EXP_ERR = mean(EXPERR),
+    MEAN_EALF = mean(EALF)
+    )%>%
+  arrange(CASETYPE)
+  
+df<-ungroup(df)
+
+num<-df%>%select(EVALCASE)%>%unique()%>%mutate(NUM = 1:n())
+
+df<-merge(df, num)
+
+df<-merge(df, sens, all.x=TRUE, all.y =FALSE)%>%select(-REACTION)
+
+  
+p<-ggplot(df, aes(x=EVALCASE, y=COVERE)) + 
+  geom_boxplot(aes(colour= LIBVER), position=position_dodge(0.0)) + 
+  geom_hline(yintercept =  1, lty = "dotted") +
+  geom_ribbon(aes(x= NUM, ymin = 1-MEAN_EXP_ERR, ymax=1+MEAN_EXP_ERR),
+              fill="gray",
+              alpha=0.2) +
+  labs(x = "", y=TeX("$k_{eff}\\,C/E$")) + 
+  scale_y_continuous(
+    sec.axis = dup_axis(),
+    # sec.axis = dup_axis(
+    #   trans = ~.*1e+5-1e+5,
+    #   name = TeX("$\\Delta \\, (pcm)$")),
+    breaks = seq(-0.94, 1.12, by = 0.01),
+    position = "bottom"
+    )+
+  coord_flip() + 
+  theme_bw()
+ 
+p
 
 ```
 
@@ -254,4 +344,10 @@ kable(outliers,
 
 
 ```
+
+
+## Comparison to previous release
+
+
+## Comparison to major releases 
 

@@ -1,6 +1,8 @@
 title : sendis
 
-url : www.sendis.org
+authors:
+   Franco Michel-Sendis:
+    href: https:://www.sendis.org
 
 template:
   params:
@@ -10,13 +12,18 @@ template:
 development:
   mode: unreleased
 
+#navbar:
 navbar:
- right:
-    - text: "App"
-      icon: fa-bar-chart
-      href: app.html
-    - icon: fa-github fa-lg
-      href: https://github.com/fmichelsendis/sendis
+ structure:
+    left:  [home, intro, reference, articles, tutorials, news]
+    right: [github]
+    
+# right:
+#    - text: "App"
+#      icon: fa-bar-chart
+#      href: app.html
+#    - icon: fa-github fa-lg
+#      href: https://github.com/fmichelsendis/sendis
 
  
       

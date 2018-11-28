@@ -8,4 +8,6 @@ docs/*
 data-raw/*
 pkgdown/*
 _pkgdown.yml
+logo.png
+
 

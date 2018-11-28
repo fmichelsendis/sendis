@@ -1,5 +1,9 @@
-
+#' plot cumulative Chi-square function
+#' 
+#' @param df dataframe to consider (no default)
+#' @export 
 plot_cumulchi<- function(df){
+  
 y_layout<-list(
     title='Chi2 build-up',
     showticklabels = TRUE,
@@ -19,31 +23,7 @@ x_layout<-list(
                      color='gray')
   )
   m <- list(l = 100,r = 0,b = 20,t = 50,pad = 0)
-
-  #generate calculated columns :
-  df<- df %>% mutate(
-    COVERE=.data$CALCVAL/.data$EXPVAL,
-    RESIDUAL = (.data$CALCVAL-.data$EXPVAL)/sqrt(.data$EXPERR^2 + .data$CALCERR^2))
-
-  df$LIBVERA<-df$LIBVER
-  df<-cSplit(as.data.table(df), "LIBVERA", "-")
-  setnames(df, old=c("LIBVERA_1","LIBVERA_2"), new=c("LIB", "VER"))
-  #tidy up
-  df<-df%>%arrange(.data$INST, .data$LIBVER, .data$CASETYPE)
-
-  #create a vector for number of cases calculated for each LIBVER
-  d<-dplyr::count(df, .data$INST, .data$LIBVER)  # d has 3 columns : INST, LIBVER and n
-  d$NCASES<-d$n  #change name of computed n to NCASES
-
-  #merge to put NCASES in df2, then mutate:
-  df2<-merge(df, d, by = c("INST", "LIBVER"))
-
-  df2<-df2%>%select(.data$INST, .data$LIBVER, .data$CASETYPE, .data$FULLID, .data$RESIDUAL, .data$NCASES)%>%
-    dplyr::arrange(.data$INST, .data$LIBVER, .data$CASETYPE, .data$FULLID)%>%
-    dplyr::group_by(.data$INST, .data$LIBVER)%>%
-    dplyr::mutate(
-      CUMUL=cumsum(.data$RESIDUAL^2/.data$NCASES),
-      CHISQ= sum (.data$RESIDUAL^2/.data$NCASES))
+ 
 
   #plot
   p<-plot_ly(df2, x=~FULLID, y=~CUMUL, color=~LIBVER, type='scatter', mode='markers+lines')%>%
