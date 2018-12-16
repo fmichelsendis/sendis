@@ -12,14 +12,19 @@ LazyData: true
 BugReports: https://github.com/fmichelsendis/sendis/issues
 Imports:
     data.table,
-    dplyr,
-    ggplot2, 
+    ggplot2,
+    kableExtra,
     knitr,
     pkgdown,
     plotly,
+    randomForest,
+    rattle,
+    rpart,
+    rpart.plot,
     scales,
     splitstackshape,
-    tidyr
+    tidyr,
+    tidyverse
 Depends: R (>= 2.10)
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1
