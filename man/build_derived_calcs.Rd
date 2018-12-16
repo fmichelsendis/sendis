@@ -4,7 +4,7 @@
 \alias{build_derived_calcs}
 \title{Computes and adds columns :}
 \usage{
-build_derived_calcs(df)
+build_derived_calcs(df = calcs)
 }
 \arguments{
 \item{df}{dataframe to consider (no default),}

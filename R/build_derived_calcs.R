@@ -25,7 +25,7 @@
 #' }
 #' 
 #' @export
-build_derived_calcs<- function(df){
+build_derived_calcs<- function(df=calcs){
   
  
   if("NCASES" %in% names(df)) {df<-df%>%select(-NCASES)} 
@@ -36,7 +36,7 @@ build_derived_calcs<- function(df){
   d$n<-NULL
   df2<-merge(df, d, by = c("INST", "LIBVER"))
    
-  e<-exps%>%select(.data$FULLID, .data$MODEL, .data$EALF, .data$EXPVAL, .data$EXPERR)
+  e<-exps%>%select(.data$FULLID, .data$MODEL, .data$EALF,  .data$AFGE, .data$EXPVAL, .data$EXPERR)
   df2<-merge(df2, e)
   
   df2<-df2%>%group_by(.data$INST, .data$LIBVER)%>%

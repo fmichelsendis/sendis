@@ -13,17 +13,41 @@ development:
   mode: unreleased
 
 #navbar:
-navbar:
- structure:
-    left:  [home, intro, reference, articles, tutorials, news]
-    right: [github]
+#navbar:
+# structure:
+#    left:  [home, intro, reference, articles, tutorials, news]
+#    right: [github]
+
+reference:
+  - title: Data
+    desc:  Data sets included in package
+    contents:
+    - sendis
+    - calcs
+    - exps
+    - sens 
+  - title: Build
+    desc:  Build a complete site or its individual section components.
+    contents:
+    - starts_with("build_")
+    - import_userdata
+  - title: Test 
+    contents:
+    - check_format_errors 
+  - title: Plots
+    desc: Functions to generate frequent plots
+    contents:
+    - starts_with("plot_")
+  - title: Others 
+    contents:
+    - starts_with("re")
     
-# right:
-#    - text: "App"
-#      icon: fa-bar-chart
-#      href: app.html
-#    - icon: fa-github fa-lg
-#      href: https://github.com/fmichelsendis/sendis
+right:
+    - text: "App"
+      icon: fa-bar-chart
+      href: app.html
+    - icon: fa-github fa-lg
+      href: https://github.com/fmichelsendis/sendis
 
  
       

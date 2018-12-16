@@ -1,14 +1,12 @@
-#' A dataset of calcs ...
-#'
-#' @format A data frame with 13282 observations of 7 variables:
+#' @format A dataset of calculated results with 13282 observations of 7 variables:
 #' \describe{
-#'   \item{FULLID}{price, in US dollars}
-#'   \item{MODEL}{weight of the diamond, in carats}
-#'   \item{CODE}{weight of the diamond, in carats}
-#'   \item{INST}{weight of the diamond, in carats}
-#'   \item{LIBVER}{weight of the diamond, in carats}
-#'   \item{CALCVAL}{weight of the diamond, in carats}
-#'   \item{CALCERR}{weight of the diamond, in carats}
+#'   \item{FULLID}{Full Identifier of Benchmark case and subcase}
+#'   \item{MODEL}{Model in case different models exist for same benchmark}
+#'   \item{CODE}{Code used for the calculation, can include version number}
+#'   \item{INST}{Institute (can also be used to include author of calculations)}
+#'   \item{LIBVER}{Library used in calculations, including version number, e.g.: JEFF-3.3}
+#'   \item{CALCVAL}{Calculated value of Keff}
+#'   \item{CALCERR}{Uncertainty of calculated value (statistical for Monte Carlo)}
 #' }
 #' @source \url{www.sendis.org}
 "calcs"
