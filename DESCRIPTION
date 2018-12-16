@@ -12,7 +12,7 @@ LazyData: true
 BugReports: https://github.com/fmichelsendis/sendis/issues
 Imports:
     data.table,
-    ggplot2,
+    ggplot2, 
     kableExtra,
     knitr,
     pkgdown,

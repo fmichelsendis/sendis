@@ -23,7 +23,7 @@ library(scales)
 library(sendis)
 library(stats)
 library(kableExtra)
-library(factoextra)
+#library(factoextra)
 library(randomForest)
 library(rattle)
 library(rpart)
@@ -155,9 +155,9 @@ df_rotated<-as.data.frame(pca.out$x)%>%
 plot_ly(df_rotated, x=~PC1, y=~PC2, color = ~FISS, alpha = 0.8)
 
 
-f<-fviz_pca_biplot(pca.out, label = "var", habillage = df_rotated$FISS)
-p<-ggplotly(f)
-p
+# f<-fviz_pca_biplot(pca.out, label = "var", habillage = df_rotated$FISS)
+# p<-ggplotly(f)
+# p
 
 
 ```
