@@ -3,7 +3,7 @@ title: "Clustering"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Clustering}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -75,7 +75,7 @@ $$
 
 ## Prepping the data 
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE, eval=FALSE}
 
 r<-filter(sendis, INST=="NRG", LIBVER=="JEFF-3.3", MODEL=="Only") %>%
   select(FULLID, SHORTID, CASETYPE, FISS, FORM, SPEC, EALF, CALCVAL, EXPVAL, RESIDUAL)%>%
@@ -244,7 +244,7 @@ plot_ly(pred_df, x=~PCM_DIFF, type = "histogram")
 
 ## SFCOMPO application
 
-```{r}
+```{r, eval=FALSE}
 
 sf<-fread("../data-raw/sfcompo2.csv", stringsAsFactors = TRUE)%>%
   select(

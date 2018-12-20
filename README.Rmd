@@ -7,7 +7,7 @@ output: github_document
 
 [![Build Status](https://travis-ci.org/fmichelsendis/sendis.svg?branch=master)](https://travis-ci.org/fmichelsendis/sendis)
 
-The aim of sendis is to  provide data and R functions that expedite common tasks in the comparison and sorting of integral performance of nuclear data libraries. 
+The aim of sendis is to provide data and R functions that expedite common tasks in the comparison and sorting of integral performance of nuclear data libraries. 
 
 
 ## Installation 
@@ -30,3 +30,4 @@ devtools::install_github("fmichelsendis/sendis")
 ## Learning more
 
 Visit the [sendis package site](http://fmichelsendis.github.io/sendis) for more information and examples. 
+

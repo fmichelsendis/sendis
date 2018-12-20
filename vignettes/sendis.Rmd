@@ -2,7 +2,10 @@
 title: "Using the sendis package"
 author: "F. Michel-Sendis"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: 
+  rmarkdown::html_vignette:
+    includes:
+       in_header: ../myheader.html 
 vignette: >
   %\VignetteIndexEntry{Using the sendis package}
   %\VignetteEngine{knitr::rmarkdown}
