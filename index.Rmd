@@ -20,7 +20,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 [![Build Status](https://travis-ci.org/fmichelsendis/sendis.svg?branch=master)](https://travis-ci.org/fmichelsendis/sendis)
- 
+
+[![Github All Releases](https://img.shields.io/github/downloads/fmichelsendis/sendis/total.svg)]()
 
 
 ## Under construction
