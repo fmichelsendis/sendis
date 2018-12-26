@@ -5,7 +5,7 @@ sudo: false
 script:
   - Rscript -e 'devtools::check()'
 
-after_success:
+after_success: 
   - Rscript -e 'pkgdown::build_site()'
 
 deploy:
