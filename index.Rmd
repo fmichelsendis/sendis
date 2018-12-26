@@ -16,6 +16,7 @@ output:
 
 [![Github All Releases](https://img.shields.io/github/downloads/fmichelsendis/sendis/total.svg)]()
 
+sendis [screening evaluated nuclear data integral stats]
 
 The aim of sendis is to provide data and R functions that expedite common tasks in the comparison and sorting of integral performance of nuclear data libraries. 
 
