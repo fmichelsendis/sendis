@@ -30,7 +30,8 @@ Depends: R (>= 2.10)
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1
 License: MIT + file LICENSE
-URL: https://github.com/fmichelsendis/sendis 
+URL: https://sendis.org, https://github.com/fmichelsendis/sendis 
 Suggests: 
     testthat,
-    rmarkdown
+    rmarkdown,
+    knitr
