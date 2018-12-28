@@ -3,7 +3,7 @@
 \docType{data}
 \name{sendis}
 \alias{sendis}
-\title{A dataset of criticality benchmarks calculations}
+\title{A dataset of benchmark results and much more.}
 \format{A data frame with 12869 observations of 25 variables:
 \describe{
   \item{FULLID}{Full ICSBEP identifier of benchmark evaluation, case and subcase, e.g.: PU-MET-FAST-001-001}
@@ -38,7 +38,7 @@
 data(sendis)
 }
 \description{
-A dataset of criticality benchmarks calculations
+A dataset of benchmark results and much more.
 }
 \examples{
 data(sendis)

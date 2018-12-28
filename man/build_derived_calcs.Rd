@@ -2,29 +2,24 @@
 % Please edit documentation in R/build_derived_calcs.R
 \name{build_derived_calcs}
 \alias{build_derived_calcs}
-\title{Computes and adds columns :}
+\title{Computes and adds derived columns}
 \usage{
-build_derived_calcs(df = calcs)
+build_derived_calcs(df)
 }
 \arguments{
 \item{df}{dataframe to consider (no default),}
 }
 \description{
-Columnds added are : 
-            
-      * EXPVAL
-      * EXPERR
-      * COVERE
-      * RESIDUAL
-      * CUMUL
-      * CHISQ
+Many of the features of interest for each benchmark observation
+are derived from a calculated-to-experiment comparison. 
+This function returns a dataframe with the following features 
+(or columns), which are added to the dataframe passed as an argument (provided it has the 
+expected format): EALF, AFGE, EXPVAL, EXPERR, COVERE, TOTERR, RESIDUAL, CUMUL, CHISQ.
 }
-\examples{
-\dontrun{
-library(sendis)
-
-build_derived_calcs(calcs)
-
-}
-
+\details{
+The argument must be a dataframe in the proper sendis format 
+describing unequivocally a benchmark result observation. The C/E association is done 
+on the basis of merging the calculated results data frame 
+and the experimental results dataframe by the benchmark identification fields (columns) 
+FULLID and MODEL.
 }

@@ -1,4 +1,4 @@
-#' A dataset of criticality benchmarks calculations
+#' A dataset of benchmark results and much more.
 #' @name sendis
 #' @docType data
 #' @usage data(sendis)

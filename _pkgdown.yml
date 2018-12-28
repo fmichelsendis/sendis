@@ -10,13 +10,7 @@ template:
     ganalysitcs: UA-79571278-3
 
 development:
-  mode: unreleased
-
-#navbar:
-#navbar:
-# structure:
-#    left:  [home, intro, reference, articles, tutorials, news]
-#    right: [github]
+  mode: devel
 
 reference:
   - title: Data

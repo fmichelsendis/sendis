@@ -1,8 +1,7 @@
 ---
-output:
-  html_document:
-    includes:
-       in_header: myheader.html 
+output: html_document
+    #includes:
+    #   in_header: myheader.html 
 ---
 <!-- <link rel="shortcut icon" type="image/x-icon"href="man/figures/favicon.ico"> -->
 
@@ -16,7 +15,7 @@ output:
 
 [![Github All Releases](https://img.shields.io/github/downloads/fmichelsendis/sendis/total.svg)]()
 
-sendis [screening evaluated nuclear data integral stats]
+**sendis** **[s**creening **e**valuated **n**uclear **d**ata **i**ntegral **s**tats**]**
 
 The aim of sendis is to provide data and R functions that expedite common tasks in the comparison and sorting of integral performance of nuclear data libraries. 
 

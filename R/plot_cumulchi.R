@@ -26,7 +26,7 @@ x_layout<-list(
  
 
   #plot
-  p<-plot_ly(df2, x=~FULLID, y=~CUMUL, color=~LIBVER, type='scatter', mode='markers+lines')%>%
+  p<-plot_ly(df, x=~FULLID, y=~CUMUL, color=~LIBVER, type='scatter', mode='markers+lines')%>%
     layout(margin=m, xaxis=x_layout, yaxis=y_layout, showlegend=TRUE)%>%
     config(displayModeBar = 'hover',showLink=FALSE,senddata=FALSE,editable=FALSE,
            displaylogo=FALSE, collaborate=FALSE, cloud=FALSE,

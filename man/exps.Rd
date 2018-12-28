@@ -3,7 +3,7 @@
 \docType{data}
 \name{exps}
 \alias{exps}
-\title{A dataset of exps ...}
+\title{A dataset of benchmark experimental information}
 \format{A data frame with 2527 observations of 36 variables:
 \describe{
   \item{FULLID}{price, in US dollars}
@@ -18,12 +18,18 @@
   \item{AFGE}{weight of the diamond, in carats} 
 }}
 \source{
-\url{www.sendis.org}
+The original data from DICE is publicly available online at \url{www.oecd-nea.org/dice}
 }
 \usage{
 exps
 }
 \description{
-A dataset of exps ...
+The exps dataset contains public data exported from 
+the online DICE database (2017 edition) of the NEA.
+}
+\details{
+The data in this package is re-formatted as an R dataframe 
+to suit our analyses purposes. For consistency, observation containing NA's 
+or missing values have been dropped.
 }
 \keyword{datasets}
