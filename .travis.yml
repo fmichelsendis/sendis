@@ -4,8 +4,10 @@ sudo: false
 
 script:
   - Rscript -e 'devtools::check()'
+  - Rscript -e 'devtools::document()'
 
 after_success: 
+  - Rscript -e 'pkgdown::build_articles()'
   - Rscript -e 'pkgdown::build_site()'
   - cp cname docs/CNAME 
 
