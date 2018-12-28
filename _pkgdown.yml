@@ -7,7 +7,7 @@ authors:
 template:
   params:
     bootswatch: spacelab
-    ganalysitcs: UA-79571278-3
+    ganalytics: UA-79571278-3
 
 development:
   mode: release
