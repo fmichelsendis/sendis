@@ -10,7 +10,7 @@ template:
     ganalysitcs: UA-79571278-3
 
 development:
-  mode: devel
+  mode: release
 
 reference:
   - title: Data
