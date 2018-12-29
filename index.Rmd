@@ -3,31 +3,122 @@ output: html_document
     #includes:
     #   in_header: myheader.html 
 ---
-<!-- <link rel="shortcut icon" type="image/x-icon"href="man/figures/favicon.ico"> -->
 
-<br><br>
-<img src="man/figures/sendis.png" align="left" height = 40/> 
-<br><br>
-<hr>
-
- 
 [![Build Status](https://travis-ci.org/fmichelsendis/sendis.svg?branch=master)](https://travis-ci.org/fmichelsendis/sendis)
-
 [![Github All Releases](https://img.shields.io/github/downloads/fmichelsendis/sendis/total.svg)]()
 
-**sendis** **[s**creening **e**valuated **n**uclear **d**ata **i**ntegral **s**tats**]**
+\  
 
-The aim of sendis is to provide data and R functions that expedite common tasks in the comparison and sorting of integral performance of nuclear data libraries. 
+<img src="man/figures/sendis.png" align="left" height = 35/> 
+
+<br>  
+<hr>
+
+*Screening evaluated nuclear data integrals, systematically*.
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width=7, 
+  fig.height=5,
+  fig.align='center'
+  ) 
+
+library(sendis)
+library(dplyr)
+library(plotly)
+
+```
+ 
+
+The **sendis R package** provides an easy access to structured data and functions that expedite common tasks in the comparison and sorting of **integral** performance of **nuclear data libraries**^[Any resemblance to the author's last name is purely coincidental.].
+
+## Data visualisation
+ 
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+data(sendis)
+df<-filter(sendis, INST=="NEA", VER!="2.2")
+p1<-plot_cumulchi(df)
+
+df<-filter(sendis, INST=="NRG", VER!="2.2")
+p2<-plot_cumulchi(df)
+
+subplot(p1, p2)
+```
+ 
+### Plot 0
+
+```{r echo = FALSE, fig.align="center"}
+#config(.Last.value, mathjax = 'cdn')
 
 
-## Installation 
+df<-sendis%>%
+  select(-FISS, -FORM, -SPEC, -LIB, -VER)%>%
+  build_splitcolumns()%>%
+  mutate(EVALCASE = paste0(CASETYPE,"-",CASE))%>%
+  #df<-sendis%>% #build_splitcolumns()%>%
+  filter(LIBVER=="JEFF-2.2"|LIBVER=="JEFF-3.3", INST=="NEA", FISS=="PU")%>% 
+  #filter(INST=="NRG")%>%
+  group_by(EVALCASE)%>%
+  mutate(
+    MEAN_EXP_ERR = mean(EXPERR),
+    MEAN_EALF = mean(EALF)
+    )%>%
+  arrange(CASETYPE)
+  
+df<-ungroup(df)
 
-```r
+num<-df%>%select(EVALCASE)%>%unique()%>%mutate(NUM = 1:n())
 
-# Install the development version from GitHub:
-devtools::install_github("fmichelsendis/sendis")
+df<-merge(df, num)
+
+df<-merge(df, sens, all.x=TRUE, all.y =FALSE)%>%select(-REACTION)
+
+  
+p<-ggplot(df, aes(x=EVALCASE, y=COVERE)) + 
+  geom_boxplot(aes(colour= LIBVER), position=position_dodge(0.0)) + 
+  geom_hline(yintercept =  1, lty = "dotted") +
+  geom_ribbon(aes(x= NUM, ymin = 1-MEAN_EXP_ERR, ymax=1+MEAN_EXP_ERR),
+              fill="gray",
+              alpha=0.2) +
+  #labs(x = "", y=TeX("k_{eff}\\,C/E")) + 
+  scale_y_continuous(
+    sec.axis = dup_axis(),
+    # sec.axis = dup_axis(
+    #   trans = ~.*1e+5-1e+5,
+    #   name = TeX("$\\Delta \\, (pcm)$")),
+    breaks = seq(-0.94, 1.12, by = 0.01),
+    position = "bottom"
+    )+
+  coord_flip() + 
+  theme_bw()
+ 
+p<-ggplotly(p)%>%layout(
+    xaxis = list(
+      title = TeX("\\sqrt{(n_\\text{c}(t|{T_\\text{early}}))}")),
+    yaxis = list(
+      title = TeX("d, r \\text{ (solar radius)}"))) %>%
+  config(mathjax = 'cdn') 
+
+p 
 
 ```
 
 
- 
+
+
+
+## Reproducible, automated reporting 
+
+Bla Bla
+
+## The sendis app 
+
+
+Bla bla 
+
+
+
+
+

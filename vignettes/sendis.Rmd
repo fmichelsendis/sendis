@@ -20,19 +20,23 @@ library(dplyr)
 
 ```
  
-## Vignette Info
+## Installation 
 
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
+To use the `sendis` package you will need a working version of the [R software](https://www.r-project.org/). 
 
-## Styles
+```{r, installation, message=FALSE, eval=FALSE}
+# First time installation in the R console : 
+# Download and load the devtools package
+install.packages("devtools")
+library(devtools)
 
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
+# Install and load the development version from GitHub:
+devtools::install_github("fmichelsendis/sendis")
+library(sendis)
+```
 
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
 
-## Figures
+ 
 
 The figure sizes have been customised so that you can easily put two images side-by-side. 
 
