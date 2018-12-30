@@ -8,5 +8,6 @@ data-raw
 pkgdown
 _pkgdown.yml
 logo.png
-
-
+examples
+^.*\.Rproj$
+^\.Rproj\.user$

@@ -340,7 +340,9 @@ g<-ggplot(df, aes(x= EALF)) +
     theme_bw()+ theme(legend.title = element_blank())
 
 g
-ggsave(filename = "plot1.png", width = 15, units = "cm", dpi = 400)  
+ggsave(plot = g, 
+       filename = "plot4.png",
+       dpi = 400)  
 
 
 ```

@@ -33,5 +33,4 @@ License: MIT + file LICENSE
 URL: https://sendis.org, https://github.com/fmichelsendis/sendis 
 Suggests: 
     testthat,
-    rmarkdown,
-    knitr
+    rmarkdown 
