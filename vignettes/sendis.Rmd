@@ -36,7 +36,21 @@ library(sendis)
 ```
 
 
+ ## Some Definitions
+
+We use the term *benchmarking suite* to refer to the list of $N$ different ICSBEP evaluations used by institutions. The selection of benchmarks differs from institution to institution.
+
+* $k_c$: calculated multiplication factor;
+* $\sigma_c$: statistical error of calculation
+* $k_e$: experimentally measured (benchmark value) multiplication factor
+* $\sigma_e$ experimental uncertainty around benchmark value
+* 'Delta' : $\Delta = k_c - k_e$
+* 'Residual' : $R=\frac{\Delta}{\sigma_e}$
+* $\chi^2 = \frac{1}{N}\sum_i^N \frac{(k_c - k_e)^2}{\sigma_c^2 + \sigma_e^2}$
+
  
+All experimental benchmark values and related physical parameters are public data and have been exported from the OECD NEA DICE database, 2016 edition. 
+
 
 The figure sizes have been customised so that you can easily put two images side-by-side. 
 

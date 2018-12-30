@@ -1,5 +1,5 @@
 ---
-output: rmarkdown::html_document
+output: rmarkdown::html_document 
 ---
 
 [![Build Status](https://travis-ci.org/fmichelsendis/sendis.svg?branch=master)](https://travis-ci.org/fmichelsendis/sendis)
@@ -41,11 +41,32 @@ library(widgetframe)
 
 <br>
 
-The **sendis R package** provides an easy access to structured data and functions that expedite common tasks in the comparison and sorting of **integral** performance of **nuclear data libraries**^[Any resemblance to the author's last name is purely coincidental.].
+The **sendis** R package provides an easy access to datasets and functions that expedite common tasks in the comparison of integral benchmarking performance of nuclear data libraries.
+
+## Background
+
+The ability of a nuclear data library to accurately reproduce, in particle-transport simulations, the observables of benchmark-quality integral experiments plays a decisive role in the data validation process and therefore also in the decision-making process of assembling any nuclear data library. 
+
+The work presented here aims at providing elements of answers to the following questions: 
+
+* How do different nuclear data libraries compare in terms of integral performance? 
+* How has the integral performance of evaluated nuclear data libraries evolved across different releases?
+* How do two assessments provided by two different benchmarking *suites* compare to each other?
+* How to build a consistend benchmarking comparison across different assessments done by different institutions?
+* How to spot general trends and outliers? 
+
+For the comparison of critical experiments, some helpful tools have been developed in this work.  
+
+### Sources 
+
+
+* [DICE](https://www.oecd-nea.org/science/wpncs/icsbep/dice.html), the OECD NEA database of the [International Criticality Safety Benchmark Evaluation Project](http://www.oecd-nea.org/science/wpncs/icsbep).
  
+## Examples
 
+Interactive graphs are 
 
-```{r, make myplotly.html, eval=FALSE}
+```{r,make myplotly.html, fig.align='center', eval=FALSE}
 
 data(sendis) 
 df<-filter(sendis, INST=="NEA", VER!="2.2")
@@ -58,16 +79,21 @@ htmlwidgets::saveWidget(p1, "myplot.html")
 
 ```
  
-<iframe src="myplot.html" width="600" height="400"  scrolling="no" seamless="seamless" frameBorder="0"> </iframe>
+<iframe src="myplot.html" width="700" height="450" scrolling="no" seamless="seamless" frameBorder="0"> </iframe>
  
 ## Reproducible, automated reporting 
 
+[Rmarkdown](https://rmarkdown.rstudio.com/)  
 
 
 ## The sendis app 
 
-
+For seeing trends in the data and filtering through the data, an interactive Shiny application has been developed. Find out more about the [sendis app](https://sendislab.org/app.html).  
  
+ 
+
+
+
 
 
 

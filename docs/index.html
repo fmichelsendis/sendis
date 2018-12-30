@@ -106,22 +106,45 @@ Screening evaluated nuclear data integral performance
 </p>
 <p><img src="examples/plot1.png" align="center" width="25%"><img src="examples/plot2.png" align="center" width="25%"><img src="examples/plot3.png" align="center" width="25%"><img src="examples/plot4.png" align="center" width="25%"></p>
 <p><br></p>
-<p>The <strong>sendis R package</strong> provides an easy access to structured data and functions that expedite common tasks in the comparison and sorting of <strong>integral</strong> performance of <strong>nuclear data libraries</strong><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
-<iframe src="myplot.html" width="600" height="400" scrolling="no" seamless="seamless" frameborder="0">
+<p>The <strong>sendis</strong> R package provides an easy access to datasets and functions that expedite common tasks in the comparison of integral benchmarking performance of nuclear data libraries.</p>
+<div id="background" class="section level2">
+<h2 class="hasAnchor">
+<a href="#background" class="anchor"></a>Background</h2>
+<p>The ability of a nuclear data library to accurately reproduce, in particle-transport simulations, the observables of benchmark-quality integral experiments plays a decisive role in the data validation process and therefore also in the decision-making process of assembling any nuclear data library.</p>
+<p>The work presented here aims at providing elements of answers to the following questions:</p>
+<ul>
+<li>How do different nuclear data libraries compare in terms of integral performance?</li>
+<li>How has the integral performance of evaluated nuclear data libraries evolved across different releases?</li>
+<li>How do two assessments provided by two different benchmarking <em>suites</em> compare to each other?</li>
+<li>How to build a consistend benchmarking comparison across different assessments done by different institutions?</li>
+<li>How to spot general trends and outliers?</li>
+</ul>
+<p>For the comparison of critical experiments, some helpful tools have been developed in this work.</p>
+<div id="sources" class="section level3">
+<h3 class="hasAnchor">
+<a href="#sources" class="anchor"></a>Sources</h3>
+<ul>
+<li>
+<a href="https://www.oecd-nea.org/science/wpncs/icsbep/dice.html">DICE</a>, the OECD NEA database of the <a href="http://www.oecd-nea.org/science/wpncs/icsbep">International Criticality Safety Benchmark Evaluation Project</a>.</li>
+</ul>
+</div>
+</div>
+<div id="examples" class="section level2">
+<h2 class="hasAnchor">
+<a href="#examples" class="anchor"></a>Examples</h2>
+<p>Interactive graphs are</p>
+<iframe src="myplot.html" width="700" height="450" scrolling="no" seamless="seamless" frameborder="0">
 </iframe>
+</div>
 <div id="reproducible-automated-reporting" class="section level2">
 <h2 class="hasAnchor">
 <a href="#reproducible-automated-reporting" class="anchor"></a>Reproducible, automated reporting</h2>
+<p><a href="https://rmarkdown.rstudio.com/">Rmarkdown</a></p>
 </div>
 <div id="the-sendis-app" class="section level2">
 <h2 class="hasAnchor">
 <a href="#the-sendis-app" class="anchor"></a>The sendis app</h2>
-</div>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn1"><p>Any resemblance to the author’s last name is purely coincidental.<a href="#fnref1">↩</a></p></li>
-</ol>
+<p>For seeing trends in the data and filtering through the data, an interactive Shiny application has been developed. Find out more about the <a href="https://sendislab.org/app.html">sendis app</a>.</p>
 </div>
   </div>
 
