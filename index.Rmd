@@ -79,11 +79,29 @@ htmlwidgets::saveWidget(p1, "myplot.html")
 
 ```
  
-<iframe src="myplot.html" width="700" height="450" scrolling="no" seamless="seamless" frameBorder="0"> </iframe>
+
+```{css, echo=FALSE}
+.holds-the-iframe {
+  background:url(examples/pacman_loader.gif) center center no-repeat;
+ }
+```
+ 
+<p align="center">
+<div class="holds-the-iframe"><iframe src="myplot.html" width="750" height="450" scrolling="no" seamless="seamless" frameBorder="0"> </iframe></div>
+</p>
  
 ## Reproducible, automated reporting 
 
 [Rmarkdown](https://rmarkdown.rstudio.com/) is used to generate automated diagnosis pdf reports. 
+
+<p align="center">
+<iframe 
+src="Report.pdf"
+width="500"
+height="700"
+style="border:2px solid orange">
+</iframe>
+</p>
 
 
 ## The sendis app 
