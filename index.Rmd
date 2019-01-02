@@ -33,10 +33,10 @@ library(plotly)
 
 ```
 
-<img src="examples/plot1.png" align="center" width="25%">
-<img src="examples/plot2.png" align="center" width="25%"> 
-<img src="examples/plot3.png" align="center" width="25%">
-<img src="examples/plot4.png" align="center" width="25%"> 
+<img src="man/figures/plot1.png" align="center" width="25%">
+<img src="man/figures/plot2.png" align="center" width="25%">
+<img src="man/figures/plot3.png" align="center" width="25%">
+<img src="man/figures/plot4.png" align="center" width="25%"> 
 
 <br>
 
@@ -81,12 +81,12 @@ htmlwidgets::saveWidget(p1, "myplot.html")
 
 ```{css, echo=FALSE}
 .holds-the-iframe {
-  background:url(examples/pacman_loader.gif) center center no-repeat;
+  background:url(man/figures/pacman_loader.gif) center center no-repeat;
  }
 ```
  
 <p align="center">
-<div class="holds-the-iframe"><iframe src="myplot.html" width="750" height="450" scrolling="no" seamless="seamless" frameBorder="0"> </iframe></div>
+<div class="holds-the-iframe"><iframe src="files/myplot.html" width="750" height="450" scrolling="no" seamless="seamless" frameBorder="0"> </iframe></div>
 </p>
  
 ## Reproducible, automated reporting 
@@ -95,7 +95,7 @@ htmlwidgets::saveWidget(p1, "myplot.html")
 
 <p align="center">
 <iframe 
-src="examples/Report.pdf"
+src="files/Report.pdf"
 width="500"
 height="700"
 style="border:2px solid orange">
