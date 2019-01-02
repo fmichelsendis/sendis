@@ -59,7 +59,7 @@ For the comparison of critical experiments, some helpful tools have been develop
 ### Sources 
 
 
-* [DICE](https://www.oecd-nea.org/science/wpncs/icsbep/dice.html), the OECD NEA database of the [International Criticality Safety Benchmark Evaluation Project](http://www.oecd-nea.org/science/wpncs/icsbep).
+* [DICE](https://www.oecd-nea.org/science/wpncs/icsbep/dice.html) (OECD NEA)
  
 ## Examples
 
