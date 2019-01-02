@@ -54,8 +54,9 @@ All experimental benchmark values and related physical parameters are public dat
 The figure sizes have been customised so that you can easily put two images side-by-side. 
 
 ```{r, fig.show='hold'}
+data(sendis)
 df<-filter(sendis, INST=="NEA", VER!="2.2")
-plot_cumulchi(df)
+sendis::plot_cumulchi(df)
 
 ```
  
