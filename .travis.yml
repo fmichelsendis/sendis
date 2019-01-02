@@ -10,10 +10,6 @@ script:
   - Rscript -e 'pkgdown::build_site()'
   
 
-#after_success:  
-  #- cp report/Report.pdf docs/examples/Report.pdf
-   
-
 deploy:
   provider: pages
   skip_cleanup: true
