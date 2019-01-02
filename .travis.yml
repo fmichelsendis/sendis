@@ -7,16 +7,17 @@ script:
   - cp -r files docs/
   - Rscript -e 'devtools::check()'
   - Rscript -e 'devtools::document()'
-  - Rscript -e 'pkgdown::build_site()'
+  - Rscript -e 'devtools::install()'
+  #- Rscript -e 'pkgdown::build_site()'
   
 
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github-token: $GITHUB_OAUTH_TOKEN
-  keep-history: true
-  local-dir: docs
-  on: 
-    branch: master
+#deploy:
+#  provider: pages
+#  skip_cleanup: true
+#  github-token: $GITHUB_OAUTH_TOKEN
+#  keep-history: true
+#  local-dir: docs
+#  on: 
+#    branch: master
 
 
