@@ -35,7 +35,7 @@ library(dplyr)
 library(kableExtra) 
 library(data.table)
 library(scales)
-library(latex2exp)
+#library(latex2exp)
 library(devtools)
 
 # Install and load the development version from GitHub:
@@ -117,25 +117,7 @@ return_kable(table, caption = "Total $\\chi^2$ values")%>%
            footnote_as_chunk = T, title_format = c("italic", "underline"))
 
 ```
-
-
-### Plot Cumul
-
-```{r echo = FALSE, fig.width=9, fig.align="center"}
-
-df<-sendis%>%
-  arrange(FULLID)%>%
-  filter(LIBVER=="JEFF-2.2"|LIBVER=="JEFF-3.3", INST=="NEA") 
-
-g<-ggplot(df, aes(x=FULLID, y=CUMUL, colour= LIBVER)) +
-  geom_point()+ geom_line()+
-  theme_bw()
-
-g
-
-```
-
-
+ 
 ## Isotopes sensitivities
 
 ```{r echo = FALSE, fig.width=9, fig.height=12, fig.align="center"}
