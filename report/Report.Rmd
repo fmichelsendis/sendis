@@ -60,19 +60,15 @@ k<-kable(df,
   return(k)
 }
 
-sens<-fread("../data-raw/fms_all_sens.csv")%>%
-  filter(REACTION=="total")%>%
-  select(-V1, -KSENS1, -KSENS2, -KSENS3)
+# sens<-fread("../data-raw/fms_all_sens.csv")%>%
+#   filter(REACTION=="total")%>%
+#   select(-V1, -KSENS1, -KSENS2, -KSENS3)
 
 ```
 
-<br>
-
-<br>
  
 # Diagnostics Report at time : `r params$date`
 
-This is just some text to display. 
 
 ## Tables 
 
@@ -120,7 +116,7 @@ return_kable(table, caption = "Total $\\chi^2$ values")%>%
  
 ## Isotopes sensitivities
 
-```{r echo = FALSE, fig.width=9, fig.height=12, fig.align="center"}
+```{r echo = FALSE, fig.width=5, fig.height=8, fig.align="center"}
 
 
 
@@ -248,7 +244,7 @@ g
 
 
 
-### Plot 2
+ 
 
 ```{r echo = FALSE}
 
@@ -281,9 +277,9 @@ g
 
 ```
 
-## Chunks
+ 
 
-```{r echo=FALSE}
+```{r echo=FALSE, eval=FALSE}
 
 dfl<-fread("../data-raw/libs.csv")
 dfl<-filter(dfl, LIB!="TENDL", LIB!="EAF", LIB!="FENDL", LIB!="ROSFOND")
@@ -296,7 +292,7 @@ g<-ggplot(dfl, aes(x=YEAR, y=NUMCHUNKS, colour=LIB))+
   
 g
 
-ggsave(filename = "plot2.png", width = 16, units = "cm", dpi = 450)
+#ggsave(filename = "plot2.png", width = 16, units = "cm", dpi = 450)
 
 
 ## Suspicious Outliers
@@ -308,7 +304,7 @@ ggsave(filename = "plot2.png", width = 16, units = "cm", dpi = 450)
 
 
 
-```{r echo = FALSE}
+```{r echo = FALSE, eval=FALSE}
 
 df<-sendis%>%filter(LIB=="JEFF"| LIB=="JENDL" | LIB=="ENDFB", INST=="NEA")%>%
   filter(FISS!="MIX")%>%
@@ -326,18 +322,14 @@ g<-ggplot(df, aes(x= EALF)) +
     theme_bw()+ theme(legend.title = element_blank())
 
 g
-ggsave(plot = g, 
-       filename = "plot4.png",
-       dpi = 400)  
+#ggsave(plot = g,filename = "plot4.png",dpi = 400)  
 
 
 ```
 
-### Table 
+ 
 
-Between NEA calcs and NRG calcs for same library 
-
-```{r echo = FALSE, results = 'asis', eval=FALSE}
+```{r echo = FALSE,  eval=FALSE}
 outliers<-sendis%>%
   return_discrepant(INST1 = "NEA", INST2 = "NRG", sigma_treshold = 3)%>%
   select(-FULLID, -EALF, -CODE.x, -CODE.y, -CALCERR.x, -CALCERR.y, -TOT_STAT_ERR_PCM)%>%
@@ -373,9 +365,5 @@ kable(outliers,
 
 ```
 
-
-## Comparison to previous release
-
-
-## Comparison to major releases 
+ 
 

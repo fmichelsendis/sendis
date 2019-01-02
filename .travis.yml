@@ -2,15 +2,17 @@ language: r
 cache: packages
 sudo: false
 
+
 script:
+  - cp -r files docs/
   - Rscript -e 'devtools::check()'
   - Rscript -e 'devtools::document()'
   - Rscript -e 'pkgdown::build_site()'
-  - Rscript -e 'rmarkdown::render("report/Report.Rmd")'
+  
 
-after_success:  
-  - cp report/Report.pdf docs/examples/Report.pdf
-  #- cp cname docs/CNAME 
+#after_success:  
+  #- cp report/Report.pdf docs/examples/Report.pdf
+   
 
 deploy:
   provider: pages
@@ -19,6 +21,6 @@ deploy:
   keep-history: true
   local-dir: docs
   on: 
-    branch: gh-pages
+    branch: master
 
 

@@ -74,7 +74,7 @@ p1<-plot_cumulchi(df)%>%
          yaxis = list(title = TeX("\\chi^2")))%>%
   config(mathjax = "cdn")
 # to display later using iframe, in order to render Mathjax : 
-htmlwidgets::saveWidget(p1, "myplot.html")
+# htmlwidgets::saveWidget(p1, "myplot.html")
 
 ```
  
