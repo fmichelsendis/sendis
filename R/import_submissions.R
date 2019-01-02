@@ -12,9 +12,6 @@
 #' @export 
 #'
 import_submissions<- function(path="submissions"){
-require(data.table)
-require(dplyr)
-
   setwd(path)
   temp<-list.files(pattern = "*.csv")
   myfiles<-lapply(temp, data.table::fread)
