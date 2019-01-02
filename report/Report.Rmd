@@ -29,7 +29,7 @@ params:
 knitr::opts_chunk$set(echo = params$printcode)
 knitr::opts_chunk$set(warning = FALSE)
 library(knitr)
-library(sendis)
+ 
 library(ggplot2)
 library(plotly)
 library(dplyr)

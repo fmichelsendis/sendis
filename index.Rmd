@@ -27,7 +27,7 @@ knitr::opts_chunk$set(
   fig.align='left'
   ) 
 
-library(sendis)
+ 
 library(dplyr)
 library(plotly)
 library(widgetframe)
