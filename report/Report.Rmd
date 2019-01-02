@@ -29,7 +29,6 @@ params:
 knitr::opts_chunk$set(echo = params$printcode)
 knitr::opts_chunk$set(warning = FALSE)
 library(knitr)
- 
 library(ggplot2)
 library(plotly)
 library(dplyr)
@@ -37,6 +36,11 @@ library(kableExtra)
 library(data.table)
 library(scales)
 library(latex2exp)
+library(devtools)
+
+# Install and load the development version from GitHub:
+devtools::install_github("fmichelsendis/sendis")
+library(sendis)
 
 return_kable<-function(df, caption=""){
   

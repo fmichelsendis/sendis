@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
- 
+
 library(dplyr)
 
 ```
@@ -23,10 +23,10 @@ library(dplyr)
 
 To use the `sendis` package you will need a working version of the [R software](https://www.r-project.org/). 
 
-```{r, installation, message=FALSE, eval=FALSE}
+```{r, installation, message=FALSE, eval=TRUE}
 # First time installation in the R console : 
 # Download and load the devtools package
-install.packages("devtools")
+# install.packages("devtools")
 library(devtools)
 
 # Install and load the development version from GitHub:
