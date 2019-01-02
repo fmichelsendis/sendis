@@ -9,7 +9,7 @@ script:
 after_success:  
   - Rscript -e 'pkgdown::build_site()'
   - Rscript -e 'rmarkdown::render("report/Report.Rmd")'
-  - cp report/Report.pdf docs/Report.pdf
+  - cp report/Report.pdf docs/examples/Report.pdf
   #- cp cname docs/CNAME 
 
 deploy:

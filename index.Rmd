@@ -96,7 +96,7 @@ htmlwidgets::saveWidget(p1, "myplot.html")
 
 <p align="center">
 <iframe 
-src="Report.pdf"
+src="examples/Report.pdf"
 width="500"
 height="700"
 style="border:2px solid orange">
