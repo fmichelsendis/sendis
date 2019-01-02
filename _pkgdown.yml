@@ -2,7 +2,9 @@ title : sendis
 
 authors:
    Franco Michel-Sendis:
-    href: https:://www.sendis.org
+    href: https://sendislab.org
+
+url: https:://sendis.org
 
 template:
   params:
@@ -11,6 +13,9 @@ template:
 
 development:
   mode: release
+
+#news:
+#  - one_page: false
 
 reference:
   - title: Data
@@ -21,10 +26,11 @@ reference:
     - exps
     - sens 
   - title: Build
-    desc:  Build a complete site or its individual section components.
+    desc:  Import and compile datasets in the required format.
     contents:
     - starts_with("build_")
-    - import_userdata
+    - starts_with("compile_")
+    - starts_with("import_")
   - title: Test 
     contents:
     - check_format_errors 
@@ -36,12 +42,12 @@ reference:
     contents:
     - starts_with("re")
     
-right:
-    - text: "App"
-      icon: fa-bar-chart
-      href: app.html
-    - icon: fa-github fa-lg
-      href: https://github.com/fmichelsendis/sendis
+#right:
+#    - text: "App"
+##      icon: fa-bar-chart
+#      href: app.html
+#    - icon: fa-github fa-lg
+#      href: https://github.com/fmichelsendis/sendis
 
 
 

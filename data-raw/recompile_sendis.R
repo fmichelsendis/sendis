@@ -4,7 +4,7 @@ recompile_sendis<- function(){
 # build_derived_calcs will merge exps and calcs and compute other columns : 
 sendis<-build_derived_calcs(calcs)%>%build_splitcolumns()
 
-# Replacing Model "NA" by "Only" - This is now useless : 
+# Replacing Model "NA" by "Only" - This is now obsolete: 
 # sendis$MODEL[is.na(sendis$MODEL)] <- "Only"
 
 #Getting rid of all other rows containing NA values

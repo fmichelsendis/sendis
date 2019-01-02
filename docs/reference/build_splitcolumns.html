@@ -6,8 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Returns a data frame 
-with extra columns : LIB, VER, CASETYPE, FISS, FORM, SPEC — build_splitcolumns • sendis</title>
+<title>Splits into extra columns — build_splitcolumns • sendis</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -40,13 +39,14 @@ with extra columns : LIB, VER, CASETYPE, FISS, FORM, SPEC — build_splitcolumns
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Returns a data frame 
-with extra columns : LIB, VER, CASETYPE, FISS, FORM, SPEC — build_splitcolumns" />
+<meta property="og:title" content="Splits into extra columns — build_splitcolumns" />
 
-<meta property="og:description" content="Returns a data frame 
-with extra columns : LIB, VER, CASETYPE, FISS, FORM, SPEC" />
+<meta property="og:description" content="This function is responsible for adding extra columns to the dataframe 
+passed in argument. Extra columns are built from splitting hyphenated 
+information from `LIBVER` and `FULLID` columns. If these columns do not 
+exist in the dataframe passed as argument the function will return an error." />
 
-<meta property="og:image" content="/logo.png" />
+<meta property="og:image" content="https:://sendis.org/logo.png" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -87,7 +87,7 @@ with extra columns : LIB, VER, CASETYPE, FISS, FORM, SPEC" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sendis</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1.9000</span>
       </span>
     </div>
 
@@ -117,6 +117,9 @@ with extra columns : LIB, VER, CASETYPE, FISS, FORM, SPEC" />
     </li>
   </ul>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -138,16 +141,17 @@ with extra columns : LIB, VER, CASETYPE, FISS, FORM, SPEC" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Returns a data frame 
-with extra columns : LIB, VER, CASETYPE, FISS, FORM, SPEC</h1>
+    <h1>Splits into extra columns</h1>
     <small class="dont-index">Source: <a href='https://github.com/fmichelsendis/sendis/blob/master/R/build_splitcolumns.R'><code>R/build_splitcolumns.R</code></a></small>
     <div class="hidden name"><code>build_splitcolumns.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Returns a data frame 
-with extra columns : LIB, VER, CASETYPE, FISS, FORM, SPEC</p>
+    <p>This function is responsible for adding extra columns to the dataframe 
+passed in argument. Extra columns are built from splitting hyphenated 
+information from `LIBVER` and `FULLID` columns. If these columns do not 
+exist in the dataframe passed as argument the function will return an error.</p>
     
     </div>
 
@@ -162,27 +166,33 @@ with extra columns : LIB, VER, CASETYPE, FISS, FORM, SPEC</p>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
+    <p>Extra columns `LIB` and `VER`, are built by splitting `LIBVER`. 
+Extra columns `SHORTID`, `CASETYPE`, `CASE`, `SUBCASE`, `FISS`, `FORM`, `SPEC` are built from `FULLID`.</p>
+    
+    <h2 class="hasAnchor" id="yaml-config-home"><a class="anchor" href="#yaml-config-home"></a>YAML config - home</h2>
 
+    
+    
 
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+      
+      <li><a href="#details">Details</a></li>
+
+      <li><a href="#yaml-config-home">YAML config - home</a></li>
+          </ul>
 
   </div>
 </div>
 
       <footer>
       <div class="copyright">
-  <p>Developed by <a href='https:://www.sendis.org'>Franco Michel-Sendis</a>.</p>
+  <p>Developed by Franco Michel-Sendis.</p>
 </div>
 
 <div class="pkgdown">

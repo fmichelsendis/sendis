@@ -3,6 +3,8 @@
 export(build_derived_calcs)
 export(build_splitcolumns)
 export(check_format_errors)
+export(compile_to_sendis)
+export(import_submissions)
 export(import_userdata)
 export(plot_cumulchi)
 export(plot_ealf)

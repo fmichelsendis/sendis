@@ -1,12 +1,11 @@
-#' Computes and adds derived columns
+#' Adds derived columns
 #' 
-#' Many of the features of interest for each benchmark observation
-#' are derived from a calculated-to-experiment comparison. 
 #' This function returns a dataframe with the following features 
-#' (or columns), which are added to the dataframe passed as an argument (provided it has the 
+#' (or columns) added to the dataframe passed as an argument (provided it has the 
 #' expected format): EALF, AFGE, EXPVAL, EXPERR, COVERE, TOTERR, RESIDUAL, CUMUL, CHISQ. 
 #'
-#' The argument must be a dataframe in the proper sendis format 
+#'
+#' The argument must be a dataframe in the proper format 
 #' describing unequivocally a benchmark result observation. The C/E association is done 
 #' on the basis of merging the calculated results data frame 
 #' and the experimental results dataframe by the benchmark identification fields (columns) 

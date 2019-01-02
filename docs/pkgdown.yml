@@ -4,4 +4,7 @@ pkgdown_sha: ~
 articles:
   sendis: sendis.html
   test: test.html
+urls:
+  reference: https:://sendis.org/reference
+  article: https:://sendis.org/articles
 

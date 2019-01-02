@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Plot C over E vs EALF. — plot_ealf • sendis</title>
+<title>Compiles dataframe to sendis format — compile_to_sendis • sendis</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -39,9 +39,10 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Plot C over E vs EALF. — plot_ealf" />
+<meta property="og:title" content="Compiles dataframe to sendis format — compile_to_sendis" />
 
-<meta property="og:description" content="Plot C over E vs EALF." />
+<meta property="og:description" content="This function is responsible for adding extra columns to the original 7 variable 
+dataframe of calculations passed in argument so that it is in the sendis format (24 variables)." />
 
 <meta property="og:image" content="https:://sendis.org/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -138,41 +139,42 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Plot C over E vs EALF.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/fmichelsendis/sendis/blob/master/R/plot_ealf.R'><code>R/plot_ealf.R</code></a></small>
-    <div class="hidden name"><code>plot_ealf.Rd</code></div>
+    <h1>Compiles dataframe to sendis format</h1>
+    <small class="dont-index">Source: <a href='https://github.com/fmichelsendis/sendis/blob/master/R/compile_to_sendis.R'><code>R/compile_to_sendis.R</code></a></small>
+    <div class="hidden name"><code>compile_to_sendis.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Plot C over E vs EALF.</p>
+    <p>This function is responsible for adding extra columns to the original 7 variable 
+dataframe of calculations passed in argument so that it is in the sendis format (24 variables).</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>plot_ealf</span>(<span class='no'>df</span>)</pre>
+    <pre class="usage"><span class='fu'>compile_to_sendis</span>(<span class='no'>df</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>df</th>
-      <td><p>dataframe to consider (no default),</p></td>
+      <td><p>dataframe</p></td>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='fu'>plot_ealf</span>(<span class='no'>sendis</span>)</div><div class='output co'>#&gt; NULL</div><div class='input'>
-</div></pre>
+    <p>Warning : using this function will modify the global variable sendis for the session.</p>
+    
+
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+      
+      <li><a href="#details">Details</a></li>
+          </ul>
 
   </div>
 </div>

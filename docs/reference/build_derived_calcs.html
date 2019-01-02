@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Computes and adds derived columns — build_derived_calcs • sendis</title>
+<title>Adds derived columns — build_derived_calcs • sendis</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -39,15 +39,13 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Computes and adds derived columns — build_derived_calcs" />
+<meta property="og:title" content="Adds derived columns — build_derived_calcs" />
 
-<meta property="og:description" content="Many of the features of interest for each benchmark observation
-are derived from a calculated-to-experiment comparison. 
-This function returns a dataframe with the following features 
-(or columns), which are added to the dataframe passed as an argument (provided it has the 
+<meta property="og:description" content="This function returns a dataframe with the following features 
+(or columns) added to the dataframe passed as an argument (provided it has the 
 expected format): EALF, AFGE, EXPVAL, EXPERR, COVERE, TOTERR, RESIDUAL, CUMUL, CHISQ." />
 
-<meta property="og:image" content="/logo.png" />
+<meta property="og:image" content="https:://sendis.org/logo.png" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -88,7 +86,7 @@ expected format): EALF, AFGE, EXPVAL, EXPERR, COVERE, TOTERR, RESIDUAL, CUMUL, C
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sendis</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1.9000</span>
       </span>
     </div>
 
@@ -118,6 +116,9 @@ expected format): EALF, AFGE, EXPVAL, EXPERR, COVERE, TOTERR, RESIDUAL, CUMUL, C
     </li>
   </ul>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -139,17 +140,15 @@ expected format): EALF, AFGE, EXPVAL, EXPERR, COVERE, TOTERR, RESIDUAL, CUMUL, C
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Computes and adds derived columns</h1>
+    <h1>Adds derived columns</h1>
     <small class="dont-index">Source: <a href='https://github.com/fmichelsendis/sendis/blob/master/R/build_derived_calcs.R'><code>R/build_derived_calcs.R</code></a></small>
     <div class="hidden name"><code>build_derived_calcs.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Many of the features of interest for each benchmark observation
-are derived from a calculated-to-experiment comparison. 
-This function returns a dataframe with the following features 
-(or columns), which are added to the dataframe passed as an argument (provided it has the 
+    <p>This function returns a dataframe with the following features 
+(or columns) added to the dataframe passed as an argument (provided it has the 
 expected format): EALF, AFGE, EXPVAL, EXPERR, COVERE, TOTERR, RESIDUAL, CUMUL, CHISQ.</p>
     
     </div>
@@ -167,7 +166,7 @@ expected format): EALF, AFGE, EXPVAL, EXPERR, COVERE, TOTERR, RESIDUAL, CUMUL, C
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The argument must be a dataframe in the proper sendis format 
+    <p>The argument must be a dataframe in the proper format 
 describing unequivocally a benchmark result observation. The C/E association is done 
 on the basis of merging the calculated results data frame 
 and the experimental results dataframe by the benchmark identification fields (columns) 
@@ -188,7 +187,7 @@ FULLID and MODEL.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by <a href='https:://www.sendis.org'>Franco Michel-Sendis</a>.</p>
+  <p>Developed by Franco Michel-Sendis.</p>
 </div>
 
 <div class="pkgdown">

@@ -64,7 +64,7 @@ For the comparison of critical experiments, some helpful tools have been develop
  
 ## Examples
 
-Interactive graphs are 
+Interactive graphs are easily rendered with plotly : 
 
 ```{r,make myplotly.html, fig.align='center', eval=FALSE}
 
@@ -83,12 +83,12 @@ htmlwidgets::saveWidget(p1, "myplot.html")
  
 ## Reproducible, automated reporting 
 
-[Rmarkdown](https://rmarkdown.rstudio.com/)  
+[Rmarkdown](https://rmarkdown.rstudio.com/) is used to generate automated diagnosis pdf reports. 
 
 
 ## The sendis app 
 
-For seeing trends in the data and filtering through the data, an interactive Shiny application has been developed. Find out more about the [sendis app](https://sendislab.org/app.html).  
+For seeing trends and filtering through the data, an interactive Shiny application has been developed. Find out more about the [sendis app](https://sendislab.org/app.html).  
  
  
 

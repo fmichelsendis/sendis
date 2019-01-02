@@ -1,13 +1,21 @@
-#' Returns a data frame 
-#' with extra columns : LIB, VER, CASETYPE, FISS, FORM, SPEC 
+#' Splits into extra columns
+#' 
+#' This function is responsible for adding extra columns to the dataframe 
+#' passed in argument. Extra columns are built from splitting hyphenated 
+#' information from `LIBVER` and `FULLID` columns. If these columns do not 
+#' exist in the dataframe passed as argument the function will return an error. 
+#' 
+#' 
+#'  
+#' Extra columns `LIB` and `VER`, are built by splitting `LIBVER`. 
+#' Extra columns `SHORTID`, `CASETYPE`, `CASE`, `SUBCASE`, `FISS`, `FORM`, `SPEC` are built from `FULLID`.  
+#' 
+#' @section YAML config - home:
 #' 
 #' @param df dataframe
 #' @import data.table
 #' @import dplyr
 #' @export
-#' @examples
-#'
-#'
 #'
 build_splitcolumns<- function(df){
  

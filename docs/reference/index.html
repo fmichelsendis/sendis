@@ -41,7 +41,7 @@
   
 <meta property="og:title" content="Function reference" />
 
-<meta property="og:image" content="/logo.png" />
+<meta property="og:image" content="https:://sendis.org/logo.png" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -82,7 +82,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sendis</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1.9000</span>
       </span>
     </div>
 
@@ -111,6 +111,9 @@
       <a href="../articles/test.html">Vignette Title</a>
     </li>
   </ul>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -180,7 +183,7 @@
       <tr>
         <th colspan="2">
           <h2 id="section-build" class="hasAnchor"><a href="#section-build" class="anchor"></a>Build</h2>
-          <p class="section-desc"><p>Build a complete site or its individual section components.</p></p>
+          <p class="section-desc"><p>Import and compile datasets in the required format.</p></p>
         </th>
       </tr>
       <tr>
@@ -188,14 +191,25 @@
         <td>
           <p><code><a href="build_derived_calcs.html">build_derived_calcs()</a></code> </p>
         </td>
-        <td><p>Computes and adds derived columns</p></td>
+        <td><p>Adds derived columns</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="build_splitcolumns.html">build_splitcolumns()</a></code> </p>
         </td>
-        <td><p>Returns a data frame 
-with extra columns : LIB, VER, CASETYPE, FISS, FORM, SPEC</p></td>
+        <td><p>Splits into extra columns</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="compile_to_sendis.html">compile_to_sendis()</a></code> </p>
+        </td>
+        <td><p>Compiles dataframe to sendis format</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="import_submissions.html">import_submissions()</a></code> </p>
+        </td>
+        <td><p>Imports all csv files</p></td>
       </tr><tr>
         
         <td>
@@ -301,7 +315,7 @@ institutions and filter them according to their difference.</p></td>
 
       <footer>
       <div class="copyright">
-  <p>Developed by <a href='https:://www.sendis.org'>Franco Michel-Sendis</a>.</p>
+  <p>Developed by Franco Michel-Sendis.</p>
 </div>
 
 <div class="pkgdown">

@@ -1,6 +1,6 @@
 Package: sendis
 Title: A Systematic Evaluated Nuclear Data Integral Survey
-Version: 0.1
+Version: 0.1.1.9000
 Authors@R: 
     person(given = "Franco",
            family = "Michel-Sendis",
