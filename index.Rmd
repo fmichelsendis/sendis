@@ -81,7 +81,7 @@ p1<-plot_cumulchi(df)%>%
 
 ```{css, echo=FALSE}
 .holds-the-iframe {
-  background:url(man/figures/pacman_loader.gif) center center no-repeat;
+  background:url(files/pacman_loader.gif) center center no-repeat;
  }
 ```
  
