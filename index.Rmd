@@ -116,9 +116,6 @@ sendis::plot_cumulchi(df)
  
 ## Reproducible, automated reporting 
  
- 
-
-
 [Rmarkdown](https://rmarkdown.rstudio.com/) is used to generate automated diagnosis pdf reports. 
 
   * Automatically compile plots and comparison tables;
@@ -127,10 +124,6 @@ sendis::plot_cumulchi(df)
 
 [<span style="font-size: 30px; color: #ffad33;">
   <i class="fa fa-arrow-alt-circle-right"></i>
-</span>](files/Report.pdf)
- 
-[<span style="font-size: 30px; color: #ffad33;">
-  <i class="fas fa-igloo"></i>
 </span>](files/Report.pdf)
 
 
