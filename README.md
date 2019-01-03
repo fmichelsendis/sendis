@@ -11,18 +11,14 @@ Installation
 ------------
 
 ``` r
-
 # Install the development version from GitHub:
 devtools::install_github("fmichelsendis/sendis")
 ```
 
-Usage
------
-
 Learning more
 -------------
 
-Visit the [sendis package site](http://fmichelsendis.github.io/sendis) for more information and examples.
+Visit the [sendis package site](http://sendis.org) for more information and examples.
 
 
 

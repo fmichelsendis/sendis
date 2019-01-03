@@ -1,13 +1,11 @@
 # sendis 0.1.1.9000
 
-## New functions
+### New functions
 
 * compile_to_sendis()
 * import_submissions()
 
-## Documentation
-
-## Bug fixes
+### Bug fixes
 
    * Lots 
    

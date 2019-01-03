@@ -62,18 +62,6 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-<li>
-      <a href="articles/test.html">Vignette Title</a>
-    </li>
-  </ul>
-</li>
 <li>
   <a href="news/index.html">Changelog</a>
 </li>
@@ -109,20 +97,17 @@ Screening evaluated nuclear data integral performance
 </p>
 <p><img src="reference/figures/plot1.png" align="center" width="25%"><img src="reference/figures/plot2.png" align="center" width="25%"><img src="reference/figures/plot3.png" align="center" width="25%"><img src="reference/figures/plot4.png" align="center" width="25%"></p>
 <p><br></p>
-<p>The <strong>sendis</strong> R package provides an easy access to datasets and functions that expedite common tasks in the comparison of integral benchmarking performance of nuclear data libraries.</p>
+<p>The <strong>sendis</strong> R package provides datasets and functions to expedite common tasks in the comparison of integral benchmarking performance of nuclear data libraries.</p>
 <div id="background" class="section level2">
 <h2 class="hasAnchor">
 <a href="#background" class="anchor"></a>Background</h2>
-<p>The ability of a nuclear data library to accurately reproduce, in particle-transport simulations, the observables of benchmark-quality integral experiments plays a decisive role in the data validation process and therefore also in the decision-making process of assembling any nuclear data library.</p>
-<p>The work presented here aims at providing elements of answers to the following questions:</p>
+<p>The ability of a nuclear data library to accurately reproduce, in particle-transport simulations, the observables of integral benchmark experiments plays a decisive role in the data validation process. Under the term <em>benchmarking</em>, the analyst tries to answer the following questions :</p>
 <ul>
-<li>How do different nuclear data libraries compare in terms of integral performance?</li>
-<li>How has the integral performance of evaluated nuclear data libraries evolved across different releases?</li>
+<li>How do different nuclear data libraries, different versions of the same library or different candidate files compare in terms of integral performance?</li>
 <li>How do two assessments provided by two different benchmarking <em>suites</em> compare to each other?</li>
-<li>How to build a consistend benchmarking comparison across different assessments done by different institutions?</li>
 <li>How to spot general trends and outliers?</li>
 </ul>
-<p>For the comparison of critical experiments, some helpful tools have been developed in this work.</p>
+<p>For the comparison of critical benchmarking, some helpful tools that help with the questions above have been developed in this package.</p>
 <div id="sources" class="section level3">
 <h3 class="hasAnchor">
 <a href="#sources" class="anchor"></a>Sources</h3>
@@ -141,6 +126,14 @@ Screening evaluated nuclear data integral performance
   background:url(files/pacman_loader.gif) center center no-repeat;
  }
 </style>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load library</span>
+<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(sendis)
+
+<span class="co"># Filter through data as needed </span>
+df&lt;-<span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/filter">filter</a></span>(sendis, INST<span class="op">==</span><span class="st">"NEA"</span>)
+
+<span class="co"># Plot</span>
+sendis<span class="op">::</span><span class="kw"><a href="https:://sendis.org/reference/plot_cumulchi.html">plot_cumulchi</a></span>(df)</code></pre></div>
 <p align="center">
 </p>
 <div class="holds-the-iframe">
@@ -154,7 +147,7 @@ Screening evaluated nuclear data integral performance
 <a href="#reproducible-automated-reporting" class="anchor"></a>Reproducible, automated reporting</h2>
 <p><a href="https://rmarkdown.rstudio.com/">Rmarkdown</a> is used to generate automated diagnosis pdf reports.</p>
 <p align="center">
-<iframe src="files/Report.pdf" width="500" height="700" style="border:2px solid orange">
+<iframe src="files/Report.pdf" width="400" height="564" style="border:2px solid orange">
 </iframe>
 </p>
 </div>

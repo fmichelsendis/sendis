@@ -40,21 +40,17 @@ library(plotly)
 
 <br>
 
-The **sendis** R package provides an easy access to datasets and functions that expedite common tasks in the comparison of integral benchmarking performance of nuclear data libraries.
+The **sendis** R package provides datasets and functions to expedite common tasks in the comparison of integral benchmarking performance of nuclear data libraries.
 
 ## Background
 
-The ability of a nuclear data library to accurately reproduce, in particle-transport simulations, the observables of benchmark-quality integral experiments plays a decisive role in the data validation process and therefore also in the decision-making process of assembling any nuclear data library. 
+The ability of a nuclear data library to accurately reproduce, in particle-transport simulations, the observables of integral benchmark experiments plays a decisive role in the data validation process. Under the term *benchmarking*, the analyst tries to answer the following questions : 
 
-The work presented here aims at providing elements of answers to the following questions: 
-
-* How do different nuclear data libraries compare in terms of integral performance? 
-* How has the integral performance of evaluated nuclear data libraries evolved across different releases?
+* How do different nuclear data libraries, different versions of the same library or different candidate files compare in terms of integral performance? 
 * How do two assessments provided by two different benchmarking *suites* compare to each other?
-* How to build a consistend benchmarking comparison across different assessments done by different institutions?
 * How to spot general trends and outliers? 
 
-For the comparison of critical experiments, some helpful tools have been developed in this work.  
+For the comparison of critical benchmarking, some helpful tools that help with the questions above have been developed in this package.  
 
 ### Sources 
 
@@ -85,6 +81,19 @@ p1<-plot_cumulchi(df)%>%
  }
 ```
  
+```{r, example code, echo=TRUE, eval=FALSE}
+# Load library
+library(sendis)
+
+# Filter through data as needed 
+df<-filter(sendis, INST=="NEA")
+
+# Plot
+sendis::plot_cumulchi(df)
+```
+  
+ 
+ 
 <p align="center">
 <div class="holds-the-iframe"><iframe src="files/myplot.html" width="750" height="450" scrolling="no" seamless="seamless" frameBorder="0"> </iframe></div>
 </p>
@@ -96,8 +105,8 @@ p1<-plot_cumulchi(df)%>%
 <p align="center">
 <iframe 
 src="files/Report.pdf"
-width="500"
-height="700"
+width="400"
+height="564"
 style="border:2px solid orange">
 </iframe>
 </p>
