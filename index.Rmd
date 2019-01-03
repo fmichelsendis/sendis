@@ -28,7 +28,8 @@ knitr::opts_chunk$set(
   #fig.width = 100pct
   ) 
 
- 
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+
 library(dplyr)
 library(plotly) 
 
@@ -77,6 +78,10 @@ p1<-plot_cumulchi(df)%>%
  
 
 ```{css, echo=FALSE}
+ 
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+ 
+
 .holds-the-iframe {
   background:url(files/pacman_loader.gif) center center no-repeat;
 }
@@ -107,58 +112,41 @@ sendis::plot_cumulchi(df)
 ```
   
  
- 
-<!-- <p align="center"> -->
-<!-- <div class="holds-the-iframe"> -->
-<!-- <iframe src="files/myplot.html"  -->
-<!-- style="width:100%;height:100%;" -->
-<!-- scrolling="no"   -->
-<!-- seamless="seamless"  -->
-<!-- frameBorder="0">  -->
-<!-- </iframe></div> -->
-<!-- </p> -->
- 
 ## Reproducible, automated reporting 
+ 
+<div class=col-left>
 
-<div class="col-left">
 
 [Rmarkdown](https://rmarkdown.rstudio.com/) is used to generate automated diagnosis pdf reports. 
 
   * Automatically compile plots and comparison tables;
   * Transparent, reproducible workflow;
   * Easily updatable with new or corrected data; 
-  
-<br><br>
-<br><br>
-  
-[Rmarkdown](https://rmarkdown.rstudio.com/) is used to generate automated diagnosis pdf reports. [Rmarkdown](https://rmarkdown.rstudio.com/) is used to generate automated diagnosis pdf reports. [Rmarkdown](https://rmarkdown.rstudio.com/) is used to generate automated diagnosis pdf reports. [Rmarkdown](https://rmarkdown.rstudio.com/) is used to generate automated diagnosis pdf reports. [Rmarkdown](https://rmarkdown.rstudio.com/) is used to generate automated diagnosis pdf reports. [Rmarkdown](https://rmarkdown.rstudio.com/) is used to generate automated diagnosis pdf reports. [Rmarkdown](https://rmarkdown.rstudio.com/) is used to generate automated diagnosis pdf reports. [Rmarkdown](https://rmarkdown.rstudio.com/) is used to generate automated diagnosis pdf reports. 
 </div>
-
-<div class="col-right">
+<div class=col-right>
 <br>
-<p align="center"> 
-<iframe 
-src="files/Report.pdf"
-width="250"
-height="350"
-style="border:2px solid orange">
-</iframe>
-</p>
+<br>
+<br>
+<center>
+[<span style="font-size: 30px; color: #ffad33;">
+  <i class="fa fa-arrow-alt-circle-right"></i>
+</span>](files/Report.pdf)
+<br>
+Sample report
+<br>
+<br>
+<br>
+</center>
 </div>
 
-
-Bla bla bla 
-
-
-
+<br>
+ 
 
 ## The sendis app 
 
 For seeing trends and filtering through the data, an interactive Shiny application has been developed. Find out more about the [sendis app](https://sendislab.org/app.html).  
  
  
-
-
 
 
 
