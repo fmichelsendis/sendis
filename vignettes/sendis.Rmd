@@ -41,8 +41,7 @@ library(sendis)
 ## Datasets
 
 ```{r, fig.show='hold'}
-library(kableExtra)
-kable(head(calcs))
+knitr::kable(head(calcs))
 ```
  
 

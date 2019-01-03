@@ -14,6 +14,8 @@ output: rmarkdown::html_document
 font-family:Helvetica"> Screening evaluated nuclear data integral performance </p>
 
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
 
 
 ```{r setup, include = FALSE}
@@ -114,7 +116,7 @@ sendis::plot_cumulchi(df)
  
 ## Reproducible, automated reporting 
  
-<div class=col-left>
+ 
 
 
 [Rmarkdown](https://rmarkdown.rstudio.com/) is used to generate automated diagnosis pdf reports. 
@@ -122,25 +124,15 @@ sendis::plot_cumulchi(df)
   * Automatically compile plots and comparison tables;
   * Transparent, reproducible workflow;
   * Easily updatable with new or corrected data; 
-</div>
-<div class=col-right>
-<br>
-<br>
-<br>
-<center>
+
 [<span style="font-size: 30px; color: #ffad33;">
   <i class="fa fa-arrow-alt-circle-right"></i>
 </span>](files/Report.pdf)
-<br>
-Sample report
-<br>
-<br>
-<br>
-</center>
-</div>
-
-<br>
  
+[<span style="font-size: 30px; color: #ffad33;">
+  <i class="fas fa-igloo"></i>
+</span>](files/Report.pdf)
+
 
 ## The sendis app 
 
