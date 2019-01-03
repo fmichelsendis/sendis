@@ -24,7 +24,8 @@ knitr::opts_chunk$set(
   message=FALSE, 
   warning=FALSE, 
   eval=TRUE,
-  fig.align='left'
+  fig.align='center'
+  #fig.width = 100pct
   ) 
 
  
@@ -76,6 +77,9 @@ p1<-plot_cumulchi(df)%>%
  
 
 ```{css, echo=FALSE}
+iframe {
+width: 90%; 
+}
 .holds-the-iframe {
   background:url(files/pacman_loader.gif) center center no-repeat;
  }
@@ -95,7 +99,7 @@ sendis::plot_cumulchi(df)
  
  
 <p align="center">
-<div class="holds-the-iframe"><iframe src="files/myplot.html" width="750" height="450" scrolling="no" seamless="seamless" frameBorder="0"> </iframe></div>
+<div class="holds-the-iframe"><iframe src="files/myplot.html" scrolling="no" seamless="seamless" frameBorder="0"> </iframe></div>
 </p>
  
 ## Reproducible, automated reporting 
@@ -105,8 +109,7 @@ sendis::plot_cumulchi(df)
 <p align="center">
 <iframe 
 src="files/Report.pdf"
-width="400"
-height="564"
+width="80%"
 style="border:2px solid orange">
 </iframe>
 </p>
