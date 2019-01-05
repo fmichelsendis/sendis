@@ -102,7 +102,7 @@
       <h1>Import your data</h1>
                         <h4 class="author">F. Michel-Sendis</h4>
             
-            <h4 class="date">2019-01-03</h4>
+            <h4 class="date">2019-01-05</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/fmichelsendis/sendis/blob/master/vignettes/user-data.Rmd"><code>vignettes/user-data.Rmd</code></a></small>
       <div class="hidden name"><code>user-data.Rmd</code></div>
@@ -607,9 +607,10 @@ JENDL-4.0
 </tbody>
 </table>
 </div>
-<div id="format-and-description-of-variables" class="section level3">
-<h3 class="hasAnchor">
-<a href="#format-and-description-of-variables" class="anchor"></a>Format and description of variables</h3>
+</div>
+<div id="format-and-description-of-variables" class="section level2">
+<h2 class="hasAnchor">
+<a href="#format-and-description-of-variables" class="anchor"></a>Format and description of variables</h2>
 <ul>
 <li>
 <code>FULLID</code> : <code>[character]</code> <strong>ICSBEP</strong> evaluation identifier, in the format FISS-FORM-SPEC-CASE-SUBCASE;</li>
@@ -629,12 +630,35 @@ JENDL-4.0
 </ul>
 <p><strong>Note</strong> the format for the two categorical values <code>FULLID</code> and <code>LIBVER</code> is extremely important, as these columns are parsed and split at the hyphen (‘-’) into separate variables.</p>
 </div>
-<div id="importing-into-sendis" class="section level3">
-<h3 class="hasAnchor">
+<div id="importing-into-sendis" class="section level2">
+<h2 class="hasAnchor">
 <a href="#importing-into-sendis" class="anchor"></a>Importing into <code>sendis</code>
-</h3>
-<p>Your data is now part of the <code>sendis</code> dataframe, in your local session (restarting your session means you will have to import again). Try plotting it :</p>
-</div>
+</h2>
+<p>The function <code><a href="../reference/import_submissions.html">sendis::import_submissions()</a></code> imports all <code>*.csv</code> files in the directory specified as its argument <code>path</code>. This function will fail with an error if your csv files are not in the <a href="../files/sendis_template.csv">csv template</a> that is required.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#use function import_submission(path="yourfolder")</span>
+df&lt;-<span class="kw"><a href="../reference/import_submissions.html">import_submissions</a></span>(<span class="dt">path =</span> <span class="st">"../docs/files/mycsvfiles/"</span>)
+
+<span class="co">#dataframe df now contains all of your csv data in `yourfolder/` :</span>
+<span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(df)
+<span class="co">#&gt;                   FULLID MODEL     CODE  INST  LIBVER CALCVAL CALCERR</span>
+<span class="co">#&gt; 1 HEU-COMP-INTER-003-001  Only CODE-6.3 TEST1 LIB-1.0 1.00638   7e-05</span>
+<span class="co">#&gt; 2 HEU-COMP-INTER-003-002  Only CODE-6.3 TEST1 LIB-1.0 1.00585   8e-05</span>
+<span class="co">#&gt; 3 HEU-COMP-INTER-003-003  Only CODE-6.3 TEST1 LIB-1.0 1.00552   8e-05</span>
+<span class="co">#&gt; 4 HEU-COMP-INTER-003-004  Only CODE-6.3 TEST1 LIB-1.0 1.00402   8e-05</span>
+<span class="co">#&gt; 5 HEU-COMP-INTER-003-005  Only CODE-6.3 TEST1 LIB-1.0 1.00574   8e-05</span>
+<span class="co">#&gt; 6 HEU-COMP-INTER-003-006  Only CODE-6.3 TEST1 LIB-1.0 0.99612   8e-05</span></code></pre></div>
+<p>Your data is imported but not yet in the format of the <code>sendis</code> dataframe. You only need to call function <code><a href="../reference/compile_to_sendis.html">compile_to_sendis()</a></code> in order to do so :</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># merge your dataframe and bind it to the sendis dataframe</span>
+mydata&lt;-<span class="kw"><a href="../reference/compile_to_sendis.html">compile_to_sendis</a></span>(df)
+
+<span class="co"># verify import by checking the dimensions of new dataframe `mydata`: </span>
+<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/dim">dim</a></span>(mydata)
+<span class="co">#&gt; [1] 16371    24</span>
+<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/dim">dim</a></span>(sendis)
+<span class="co">#&gt; [1] 13278    24</span></code></pre></div>
+<p>Try plotting it :</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/plot_ealf.html">plot_ealf</a></span>(mydata)</code></pre></div>
+<p><img src="user-data_files/figure-html/plot-user-data-1.png" width="700" style="display: block; margin: auto;"></p>
 </div>
 <div id="contribute-your-data" class="section level2">
 <h2 class="hasAnchor">
@@ -649,6 +673,8 @@ JENDL-4.0
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
 <li><a href="#csv-template">CSV template</a></li>
+      <li><a href="#format-and-description-of-variables">Format and description of variables</a></li>
+      <li><a href="#importing-into-sendis">Importing into <code>sendis</code></a></li>
       <li><a href="#contribute-your-data">Contribute your data</a></li>
       </ul>
 </div>

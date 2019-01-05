@@ -6,7 +6,7 @@ sudo: false
 script:
   # - cp -r files docs/
   - Rscript -e 'devtools::check()'
-  # - Rscript -e 'devtools::document()'
+  - Rscript -e 'devtools::document()'
   - Rscript -e 'devtools::install()'
   #- Rscript -e 'pkgdown::build_site()'
   

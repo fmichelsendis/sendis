@@ -55,10 +55,8 @@ df<-df%>%
     )
 
 # rbind both sendis and df and modify global sendis : 
-both<-rbind(sendis, df)
-sendis<<-both%>%unique()
-
-# return df only if needed 
-return(df)
+rdf<-rbind(sendis, df)%>%unique() 
+# return merged df 
+return(rdf)
 }
 

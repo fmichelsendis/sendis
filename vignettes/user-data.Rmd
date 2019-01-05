@@ -58,7 +58,7 @@ knitr::kable(df)%>%
  
 ```
 
-### Format and description of variables 
+## Format and description of variables 
 
   * `FULLID` : `[character]` **ICSBEP** evaluation identifier, in the format FISS-FORM-SPEC-CASE-SUBCASE;
   * `MODEL` : `[character]` model input used, when specified, otherwise leave blank;  
@@ -70,16 +70,37 @@ knitr::kable(df)%>%
  
 **Note** the format for the two categorical values `FULLID` and `LIBVER` is extremely important, as these columns are parsed and split at the hyphen ('-') into separate variables. 
 
-### Importing into `sendis`
+## Importing into `sendis`
 
-```{r, import-user-data}
+The function `sendis::import_submissions()` imports all `*.csv` files in the directory specified as its argument `path`. This function will fail with an error if your csv files are not in the [csv template](../files/sendis_template.csv) that is required. 
 
+
+```{r, import-user-data, echo=TRUE, eval=TRUE}
+# use function import_submission(path="yourfolder")
+df<-import_submissions(path = "../docs/files/mycsvfiles/")
+
+# verify import by checking the dimensions of dataframe `mydata`: 
+dim(df)
+
+# dataframe contains all of your csv data in `yourfolder/` :
+head(df)
 ```
 
-Your data is now part of the `sendis` dataframe, in your local session (restarting your session means you will have to import again). Try plotting it :
+Your data is imported but not yet in the format of the `sendis` dataframe. You only need to call function `compile_to_sendis()` in order to do so : 
 
-```{r, plot-user-data}
+```{r, compile-user-data, echo=TRUE, eval=TRUE}
+# merge your dataframe and bind it to the sendis dataframe
+mydata<-compile_to_sendis(df)
 
+# verify import by checking the new dimensions of dataframe `mydata`: 
+dim(mydata)
+dim(sendis)
+```
+
+Try plotting it :
+
+```{r, plot-user-data,echo=TRUE, eval=TRUE}
+plot_ealf(mydata)
 ```
 
 
