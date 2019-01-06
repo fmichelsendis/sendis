@@ -129,8 +129,7 @@ sendis::plot_cumulchi(df)
 
 ## The sendis app 
 
-For seeing trends and filtering through the data, an interactive Shiny application has been developed. Find out more about the [sendis app](https://sendislab.org/app.html).  
- 
+For seeing trends and filtering through the data, an interactive Shiny application has been developed. Find out more about the [sendis app](files/Sendis.zip).  
  
 
 

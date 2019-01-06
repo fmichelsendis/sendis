@@ -23,6 +23,11 @@ Imports:
     rpart.plot,
     scales,
     splitstackshape,
+    stringr,
+    shiny,
+    shinydashboard,
+    shinythemes,
+    shinyjs,
     tidyr,
     dplyr,
     tidyverse

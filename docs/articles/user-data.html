@@ -102,7 +102,7 @@
       <h1>Import your data</h1>
                         <h4 class="author">F. Michel-Sendis</h4>
             
-            <h4 class="date">2019-01-05</h4>
+            <h4 class="date">2019-01-07</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/fmichelsendis/sendis/blob/master/vignettes/user-data.Rmd"><code>vignettes/user-data.Rmd</code></a></small>
       <div class="hidden name"><code>user-data.Rmd</code></div>
@@ -635,10 +635,14 @@ JENDL-4.0
 <a href="#importing-into-sendis" class="anchor"></a>Importing into <code>sendis</code>
 </h2>
 <p>The function <code><a href="../reference/import_submissions.html">sendis::import_submissions()</a></code> imports all <code>*.csv</code> files in the directory specified as its argument <code>path</code>. This function will fail with an error if your csv files are not in the <a href="../files/sendis_template.csv">csv template</a> that is required.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#use function import_submission(path="yourfolder")</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># use function import_submission(path="yourfolder")</span>
 df&lt;-<span class="kw"><a href="../reference/import_submissions.html">import_submissions</a></span>(<span class="dt">path =</span> <span class="st">"../docs/files/mycsvfiles/"</span>)
 
-<span class="co">#dataframe df now contains all of your csv data in `yourfolder/` :</span>
+<span class="co"># verify import by checking the dimensions of dataframe `mydata`: </span>
+<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/dim">dim</a></span>(df)
+<span class="co">#&gt; [1] 3309    7</span>
+
+<span class="co"># dataframe contains all of your csv data in `yourfolder/` :</span>
 <span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(df)
 <span class="co">#&gt;                   FULLID MODEL     CODE  INST  LIBVER CALCVAL CALCERR</span>
 <span class="co">#&gt; 1 HEU-COMP-INTER-003-001  Only CODE-6.3 TEST1 LIB-1.0 1.00638   7e-05</span>
@@ -651,7 +655,7 @@ df&lt;-<span class="kw"><a href="../reference/import_submissions.html">import_su
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># merge your dataframe and bind it to the sendis dataframe</span>
 mydata&lt;-<span class="kw"><a href="../reference/compile_to_sendis.html">compile_to_sendis</a></span>(df)
 
-<span class="co"># verify import by checking the dimensions of new dataframe `mydata`: </span>
+<span class="co"># verify import by checking the new dimensions of dataframe `mydata`: </span>
 <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/dim">dim</a></span>(mydata)
 <span class="co">#&gt; [1] 16371    24</span>
 <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/dim">dim</a></span>(sendis)
