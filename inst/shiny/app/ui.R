@@ -8,7 +8,7 @@
 #dtitle<-tags$a(href='http://www.sendis.org',
 #       tags$img(src='sendis.png', height='20'))
 
-dtitle<-tags$img(src='www/sendis.png', height='22')
+dtitle<-tags$img(src='./sendis.png', height='22')
 
 header <- dashboardHeader(title=dtitle)
                            
