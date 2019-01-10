@@ -22,16 +22,17 @@ server <- function(input, output, session){
     
     # Prepping data using exps data frame, cleaning to get only numerical columns
     # exp_df is a dataframe with only numerical values, a subset of the exps data
-    
+    data(sendis)
     r<-filter(sendis, INST==inst, LIBVER%in%lib_list, MODEL=="Only") %>%
       select(FULLID, LIBVER, INST, EALF, RESIDUAL)%>%
       unique()
     
-    mats<-fread("data/mats_used.csv")
+    data(mats)
     mats<-mats%>%
-      mutate(ISOTOPE=paste0(NAME,A))%>%
-      select(-V1, -M2, -MAT, -M, -N)
+      mutate(ISOTOPE=paste0(X,A))%>%
+      select(-MAT)
     
+    data(sens)
     s<-sens%>%
       mutate(IR = paste0(ISOTOPE, "_", REACTION))%>%
       merge(mats, by = "ISOTOPE")%>%

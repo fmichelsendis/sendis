@@ -122,14 +122,17 @@ sendis::plot_cumulchi(df)
   * Transparent, reproducible workflow;
   * Easily updatable with new or corrected data; 
 
-[<span style="font-size: 30px; color: #ffad33;">
-  <i class="fa fa-arrow-alt-circle-right"></i>
-</span>](files/Report.pdf)
+<!-- [<span style="font-size: 30px; color: #ffad33;"> -->
+<!--   <i class="fa fa-arrow-alt-circle-right"></i> -->
+<!-- </span>](files/Report.pdf) -->
 
 
 ## The sendis app 
 
-For seeing trends and filtering through the data, an interactive Shiny application has been developed. Find out more about the [sendis app](files/Sendis.zip).  
+For seeing trends and filtering through the data, an interactive Shiny application has been developed. 
+
+   * Download a Mac install for the [sendis app](files/Sendis.zip).  
+   * Use the command line in an R session 
  
 
 
