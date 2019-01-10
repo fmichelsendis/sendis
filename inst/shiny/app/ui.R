@@ -8,10 +8,14 @@
 #dtitle<-tags$a(href='http://www.sendis.org',
 #       tags$img(src='sendis.png', height='20'))
 
+#
+
+
+
 dtitle<-tags$img(src='./sendis.png', height='22')
 
 header <- dashboardHeader(title=dtitle)
-                           
+                        
 
 sidebar <- dashboardSidebar(disable = TRUE, width = 250)
 
@@ -22,8 +26,10 @@ gBoxPlotsHeight<-'460px'
 body <- dashboardBody(
               useShinyjs(),
               tags$head(tags$link(rel = "stylesheet", type = "text/css", href = "custom.css")),
+              tags$title("Sendis App"),
               fluidPage(withMathJax(),
-              tabBox(title=tagList(shiny::icon("send-o"), "v0.2"), width=12, 
+                        
+              tabBox(title=tagList(shiny::icon("send-o"), "v1.0"), width=12, 
                      tabPanel(tag('h4',"Sens Isotopes"),
                              fluidRow(
                                column(4,
@@ -182,9 +188,11 @@ body <- dashboardBody(
 
 )))
 
+dashboardHeader(disable = TRUE)  
 dashboardPage(
+  title = "Sendis App", 
   skin="black",
   header,
-  #dashboardHeader(disable = FALSE),
+  #dashboardHeader(disable = TRUE),    
   sidebar,
   body)
