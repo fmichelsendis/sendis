@@ -5,9 +5,6 @@
 #' @import ggplot2
 #' @import scales
 #' @export
-#' @examples
-#'
-#' plot_afge(sendis)
 #'
 plot_afge<-function(df){
   g<-ggplot(df, aes(x= .data$AFGE)) + 

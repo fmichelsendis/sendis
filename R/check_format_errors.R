@@ -5,7 +5,6 @@
 #' @import data.table
 #' @import dplyr
 #' @export
-#' @examples
 #'
 #'
 #'

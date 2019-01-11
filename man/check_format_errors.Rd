@@ -14,8 +14,3 @@ check_format_errors(file, type = "df")
 \description{
 Checks that csv data is in expected format
 }
-\examples{
-
-
-
-}

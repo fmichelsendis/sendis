@@ -10,8 +10,6 @@
 #' Extra columns `LIB` and `VER`, are built by splitting `LIBVER`. 
 #' Extra columns `SHORTID`, `CASETYPE`, `CASE`, `SUBCASE`, `FISS`, `FORM`, `SPEC` are built from `FULLID`.  
 #' 
-#' @section YAML config - home:
-#' 
 #' @param df dataframe
 #' @import data.table
 #' @import dplyr

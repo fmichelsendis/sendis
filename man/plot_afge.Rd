@@ -12,8 +12,3 @@ plot_afge(df)
 \description{
 Plot C over E vs AFGE
 }
-\examples{
-
-plot_afge(sendis)
-
-}

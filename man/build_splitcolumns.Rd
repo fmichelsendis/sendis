@@ -19,7 +19,3 @@ exist in the dataframe passed as argument the function will return an error.
 Extra columns `LIB` and `VER`, are built by splitting `LIBVER`. 
 Extra columns `SHORTID`, `CASETYPE`, `CASE`, `SUBCASE`, `FISS`, `FORM`, `SPEC` are built from `FULLID`.
 }
-\section{YAML config - home}{
-
-}
-
