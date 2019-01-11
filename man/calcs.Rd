@@ -3,7 +3,7 @@
 \docType{data}
 \name{calcs}
 \alias{calcs}
-\title{A dataset of benchmark calculations.}
+\title{A dataset of benchmark calculations}
 \format{A dataset of calculated results with 13282 observations of 7 variables
 
 \describe{

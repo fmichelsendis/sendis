@@ -1,4 +1,4 @@
-#' A dataset of benchmark calculations.
+#' A dataset of benchmark calculations
 #' 
 #' The structure of this dataset (7 features per observation) 
 #' is the minimal template for calculated results 

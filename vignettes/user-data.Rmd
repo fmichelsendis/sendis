@@ -100,7 +100,7 @@ dim(sendis)
 Try plotting it :
 
 ```{r, plot-user-data,echo=TRUE, eval=TRUE}
-plot_ealf(mydata)
+plot_afge(mydata)
 ```
 
 

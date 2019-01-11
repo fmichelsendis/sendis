@@ -1,4 +1,4 @@
-#' Plot C over E vs EALF.
+#' Plot C over E vs AFGE
 #'
 #' @param df dataframe to consider (no default),
 #' @import dplyr
@@ -7,9 +7,9 @@
 #' @export
 #' @examples
 #'
-#' plot_ealf(sendis)
+#' plot_afge(sendis)
 #'
-plot_ealf<- function(df){
+plot_afge<-function(df){
   g<-ggplot(df, aes(x= .data$AFGE)) + 
     geom_point(aes(y= .data$COVERE, colour= .data$LIBVER, 
                    shape= .data$FISS, alpha=0.8)) +

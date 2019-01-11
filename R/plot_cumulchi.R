@@ -1,4 +1,4 @@
-#' plot cumulative Chi-square function
+#' Plot cumulative Chi-square function
 #' 
 #' @param df dataframe to consider (no default)
 #' @export 

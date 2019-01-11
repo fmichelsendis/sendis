@@ -2,7 +2,7 @@
 % Please edit documentation in R/rename_table_header.R
 \name{rename_table_header}
 \alias{rename_table_header}
-\title{Restyle header for sendis-report.}
+\title{Restyle header for sendis-report}
 \usage{
 rename_table_header(df)
 }
@@ -10,5 +10,5 @@ rename_table_header(df)
 \item{df}{dataframe to consider (no default),}
 }
 \description{
-Restyle header for sendis-report.
+Restyle header for sendis-report
 }

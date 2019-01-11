@@ -2,8 +2,7 @@
 % Please edit documentation in R/return_discrepant.R
 \name{return_discrepant}
 \alias{return_discrepant}
-\title{Return a dataframe of common calculated benchmarks between two 
-institutions and filter them according to their difference.}
+\title{Return a dataframe of common benchmarks}
 \usage{
 return_discrepant(df, INST1, INST2, sigma_treshold = 0)
 }
@@ -17,6 +16,5 @@ return_discrepant(df, INST1, INST2, sigma_treshold = 0)
 \item{sigma_treshold}{(no default),}
 }
 \description{
-Return a dataframe of common calculated benchmarks between two 
-institutions and filter them according to their difference.
+And filters them according to their difference.
 }

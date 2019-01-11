@@ -114,28 +114,30 @@ sendis::plot_cumulchi(df)
 ```
   
  
-## Reproducible, automated reporting 
- 
-[Rmarkdown](https://rmarkdown.rstudio.com/) is used to generate automated diagnosis pdf reports. 
-
-  * Automatically compile plots and comparison tables;
-  * Transparent, reproducible workflow;
-  * Easily updatable with new or corrected data; 
-
-<!-- [<span style="font-size: 30px; color: #ffad33;"> -->
-<!--   <i class="fa fa-arrow-alt-circle-right"></i> -->
-<!-- </span>](files/Report.pdf) -->
-
 
 ## The sendis app 
 
 For seeing trends and filtering through the data, an interactive Shiny application has been developed. 
 
-   * Download a Mac install for the [sendis app](files/Sendis.zip).  
-   * Use the command line in an R session 
+   * [<img src="man/figures/sicon.png" align="center" width="4%">](files/Sendis.zip) For Mac users : download a 
+   [launcher](files/Sendis.zip) 
+   for the sendis app and double-click the **sendis** icon. 
+   
+   * Alternatively, use the command line in an R session :
+   
+```{r, launcher, echo=TRUE, eval=FALSE}
+library(sendis)
+sendis::runApp()
+```
  
 
+## Reproducible, automated reporting 
+ 
+Integrate **sendis** into an [Rmarkdown](https://rmarkdown.rstudio.com/) workflow to generate automated diagnosis pdf reports. 
 
+  * Automatically compile plots and comparison tables;
+  * Transparent, reproducible workflow;
+  * Easily updatable with new or corrected data; 
 
 
 

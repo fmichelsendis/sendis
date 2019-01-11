@@ -1,4 +1,4 @@
-#' A dataset of benchmark results and much more.
+#' A dataset of benchmark results and much more
 #' @name sendis
 #' @docType data
 #' @usage data(sendis)

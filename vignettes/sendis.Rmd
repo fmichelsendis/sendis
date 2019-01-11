@@ -25,26 +25,29 @@ library(dplyr)
  
 ## Installation 
 
-To use the `sendis` package you will need a working version of the [R software](https://www.r-project.org/). 
+To use the `sendis` package you will need a working version of the [R software](https://www.r-project.org/). In an R console : 
 
 ```{r, installation, message=FALSE, eval=TRUE}
-# First time installation in the R console : 
-# Download and load the devtools package
-# install.packages("devtools")
+# First time installation  
+# If required, download the devtools package and load it :
+if (system.file(package="devtools") == "") install.packages("devtools")
 library(devtools)
 
-# Install and load the development version from GitHub:
+# Install and load the latest development version from GitHub:
 devtools::install_github("fmichelsendis/sendis")
 library(sendis)
 ```
 
 ## Datasets
 
+You now have a series of datasets available. Try exploring them : 
+
 ```{r, fig.show='hold'}
 knitr::kable(head(calcs))
 ```
  
 
+You can try to plot a pre-defined plot with one of the plot functions : 
 
 ```{r, fig.show='hold'}
 df<-filter(sendis, INST=="NEA", VER!="2.2")

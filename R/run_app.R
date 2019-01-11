@@ -1,4 +1,4 @@
-#' Wrapper to launch the sendis app
+#' Wrapper to launch the sendis Shiny app
 #' 
 #' @export
 runApp<- function() {

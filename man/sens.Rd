@@ -3,7 +3,7 @@
 \docType{data}
 \name{sens}
 \alias{sens}
-\title{A dataset containing grouped sensitivity data.}
+\title{A dataset containing grouped sensitivity data}
 \format{A data frame with 236128 observations of 7 featuress:
 \describe{
   \item{FULLID}{Benchmark case identification}

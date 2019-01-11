@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • sendis</title>
+<title>Plot C over E vs AFGE — plot_afge • sendis</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -39,7 +39,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Plot C over E vs AFGE — plot_afge" />
+
+<meta property="og:description" content="Plot C over E vs AFGE" />
 
 <meta property="og:image" content="https:://sendis.org/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -69,7 +71,7 @@
   </head>
 
   <body>
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -136,58 +138,45 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/fmichelsendis/sendis/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+    <h1>Plot C over E vs AFGE</h1>
+    <small class="dont-index">Source: <a href='https://github.com/fmichelsendis/sendis/blob/master/R/plot_afge.R'><code>R/plot_afge.R</code></a></small>
+    <div class="hidden name"><code>plot_afge.Rd</code></div>
     </div>
 
-    <div id="sendis-0-1-2-9000" class="section level1">
-<h1 class="page-header">
-<a href="#sendis-0-1-2-9000" class="anchor"></a>sendis 0.1.2.9000</h1>
-<div id="new-functions" class="section level3">
-<h3 class="hasAnchor">
-<a href="#new-functions" class="anchor"></a>New functions</h3>
-<ul>
-<li>runApp() - Shiny application now part of package</li>
-</ul>
-</div>
-</div>
-    <div id="sendis-0-1-1-9000" class="section level1">
-<h1 class="page-header">
-<a href="#sendis-0-1-1-9000" class="anchor"></a>sendis 0.1.1.9000</h1>
-<div id="new-functions-1" class="section level3">
-<h3 class="hasAnchor">
-<a href="#new-functions-1" class="anchor"></a>New functions</h3>
-<ul>
-<li>compile_to_sendis()</li>
-<li>import_submissions()</li>
-</ul>
-</div>
-<div id="bug-fixes" class="section level3">
-<h3 class="hasAnchor">
-<a href="#bug-fixes" class="anchor"></a>Bug fixes</h3>
-<ul>
-<li>Lots</li>
-</ul>
-</div>
-</div>
-    <div id="sendis-0-1-0-9000" class="section level1">
-<h1 class="page-header">
-<a href="#sendis-0-1-0-9000" class="anchor"></a>sendis 0.1.0.9000</h1>
-<p>First devel release of sendis.</p>
-</div>
-  </div>
+    <div class="ref-description">
+    
+    <p>Plot C over E vs AFGE</p>
+    
+    </div>
 
+    <pre class="usage"><span class='fu'>plot_afge</span>(<span class='no'>df</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>df</th>
+      <td><p>dataframe to consider (no default),</p></td>
+    </tr>
+    </table>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+<span class='fu'>plot_afge</span>(<span class='no'>sendis</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Transformation introduced infinite values in continuous x-axis</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Transformation introduced infinite values in continuous x-axis</span></div><div class='output co'>#&gt; <span class='warning'>Warning: The shape palette can deal with a maximum of 6 discrete values because</span>
+#&gt; <span class='warning'>more than 6 becomes difficult to discriminate; you have 7. Consider</span>
+#&gt; <span class='warning'>specifying shapes manually if you must have them.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 820 rows containing missing values (geom_point).</span></div><div class='img'><img src='plot_afge-1.png' alt='' width='700' height='433' /></div><div class='input'>
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <div id="tocnav">
-      <h2>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-        <li><a href="#sendis-0-1-2-9000">0.1.2.9000</a></li>
-        <li><a href="#sendis-0-1-1-9000">0.1.1.9000</a></li>
-        <li><a href="#sendis-0-1-0-9000">0.1.0.9000</a></li>
-      </ul>
-    </div>
-  </div>
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+            
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
+  </div>
 </div>
 
       <footer>

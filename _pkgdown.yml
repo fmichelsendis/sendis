@@ -39,6 +39,9 @@ reference:
     desc: Functions to generate frequent plots
     contents:
     - starts_with("plot_")
+  - title: Shiny
+    contents:
+    - runApp
   - title: Others 
     contents:
     - starts_with("re")

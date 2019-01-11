@@ -1,4 +1,4 @@
-#' Restyle header for sendis-report.
+#' Restyle header for sendis-report
 #'
 #' @param df dataframe to consider (no default),
 #' @import dplyr

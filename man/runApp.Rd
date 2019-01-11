@@ -2,10 +2,10 @@
 % Please edit documentation in R/run_app.R
 \name{runApp}
 \alias{runApp}
-\title{Wrapper to launch the sendis app}
+\title{Wrapper to launch the sendis Shiny app}
 \usage{
 runApp()
 }
 \description{
-Wrapper to launch the sendis app
+Wrapper to launch the sendis Shiny app
 }

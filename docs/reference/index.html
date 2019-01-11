@@ -82,7 +82,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sendis</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2.9000</span>
       </span>
     </div>
 
@@ -159,13 +159,13 @@
         <td>
           <p><code><a href="sendis.html">sendis</a></code> </p>
         </td>
-        <td><p>A dataset of benchmark results and much more.</p></td>
+        <td><p>A dataset of benchmark results and much more</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="calcs.html">calcs</a></code> </p>
         </td>
-        <td><p>A dataset of benchmark calculations.</p></td>
+        <td><p>A dataset of benchmark calculations</p></td>
       </tr><tr>
         
         <td>
@@ -183,7 +183,7 @@
         <td>
           <p><code><a href="sens.html">sens</a></code> </p>
         </td>
-        <td><p>A dataset containing grouped sensitivity data.</p></td>
+        <td><p>A dataset containing grouped sensitivity data</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -216,13 +216,6 @@
           <p><code><a href="import_submissions.html">import_submissions()</a></code> </p>
         </td>
         <td><p>Imports all csv files</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="import_userdata.html">import_userdata()</a></code> </p>
-        </td>
-        <td><p>Import csv data file from user and returns a data frame 
-columns CASETYPE, FISS, FORM, SPEC are reconstructed from column FULLID</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -248,15 +241,15 @@ columns CASETYPE, FISS, FORM, SPEC are reconstructed from column FULLID</p></td>
       <tr>
         
         <td>
-          <p><code><a href="plot_cumulchi.html">plot_cumulchi()</a></code> </p>
+          <p><code><a href="plot_afge.html">plot_afge()</a></code> </p>
         </td>
-        <td><p>plot cumulative Chi-square function</p></td>
+        <td><p>Plot C over E vs AFGE</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="plot_ealf.html">plot_ealf()</a></code> </p>
+          <p><code><a href="plot_cumulchi.html">plot_cumulchi()</a></code> </p>
         </td>
-        <td><p>Plot C over E vs EALF.</p></td>
+        <td><p>Plot cumulative Chi-square function</p></td>
       </tr><tr>
         
         <td>
@@ -268,7 +261,21 @@ columns CASETYPE, FISS, FORM, SPEC are reconstructed from column FULLID</p></td>
         <td>
           <p><code><a href="plot_scree.html">plot_scree()</a></code> </p>
         </td>
-        <td><p>plot scree plot for clustering analysis</p></td>
+        <td><p>Plot scree plot for clustering analysis</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-shiny" class="hasAnchor"><a href="#section-shiny" class="anchor"></a>Shiny</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="runApp.html">runApp()</a></code> </p>
+        </td>
+        <td><p>Wrapper to launch the sendis Shiny app</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -282,7 +289,7 @@ columns CASETYPE, FISS, FORM, SPEC are reconstructed from column FULLID</p></td>
         <td>
           <p><code><a href="rename_table_header.html">rename_table_header()</a></code> </p>
         </td>
-        <td><p>Restyle header for sendis-report.</p></td>
+        <td><p>Restyle header for sendis-report</p></td>
       </tr><tr>
         
         <td>
@@ -300,8 +307,7 @@ columns CASETYPE, FISS, FORM, SPEC are reconstructed from column FULLID</p></td>
         <td>
           <p><code><a href="return_discrepant.html">return_discrepant()</a></code> </p>
         </td>
-        <td><p>Return a dataframe of common calculated benchmarks between two 
-institutions and filter them according to their difference.</p></td>
+        <td><p>Return a dataframe of common benchmarks</p></td>
       </tr>
     </tbody>
     </table>
@@ -314,6 +320,7 @@ institutions and filter them according to their difference.</p></td>
       <li><a href="#section-build">Build</a></li>
       <li><a href="#section-test">Test</a></li>
       <li><a href="#section-plots">Plots</a></li>
+      <li><a href="#section-shiny">Shiny</a></li>
       <li><a href="#section-others">Others</a></li>
     </ul>
   </div>

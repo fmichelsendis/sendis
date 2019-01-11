@@ -1,4 +1,4 @@
-#' A dataset containing grouped sensitivity data.
+#' A dataset containing grouped sensitivity data
 #' 
 #' The sens dataset contains public data exported from 
 #' the online DICE database (2017 edition) of the NEA. 

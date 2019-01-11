@@ -1,5 +1,7 @@
-#' Return a dataframe of common calculated benchmarks between two 
-#' institutions and filter them according to their difference. 
+#' Return a dataframe of common benchmarks 
+#' 
+#' And filters them according to their difference. 
+#' 
 #' @param df  dataframe to explore (no default).
 #' @param INST1  (no default),
 #' @param INST2  (no default),

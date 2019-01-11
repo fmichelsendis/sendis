@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_cumulchi.R
 \name{plot_cumulchi}
 \alias{plot_cumulchi}
-\title{plot cumulative Chi-square function}
+\title{Plot cumulative Chi-square function}
 \usage{
 plot_cumulchi(df)
 }
@@ -10,5 +10,5 @@ plot_cumulchi(df)
 \item{df}{dataframe to consider (no default)}
 }
 \description{
-plot cumulative Chi-square function
+Plot cumulative Chi-square function
 }

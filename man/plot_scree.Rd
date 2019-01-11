@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_scree.R
 \name{plot_scree}
 \alias{plot_scree}
-\title{plot scree plot for clustering analysis}
+\title{Plot scree plot for clustering analysis}
 \usage{
 plot_scree(df, cmax = 20, nstart = 20)
 }
@@ -10,5 +10,5 @@ plot_scree(df, cmax = 20, nstart = 20)
 \item{df}{dataframe to consider (no default)}
 }
 \description{
-plot scree plot for clustering analysis
+Plot scree plot for clustering analysis
 }

@@ -1,4 +1,4 @@
-#' plot scree plot for clustering analysis
+#' Plot scree plot for clustering analysis
 #' 
 #' @param df dataframe to consider (no default)
 #' @export 

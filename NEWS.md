@@ -1,3 +1,10 @@
+
+# sendis 0.1.2.9000
+
+### New functions
+
+* runApp() - Shiny application now part of package
+
 # sendis 0.1.1.9000
 
 ### New functions
