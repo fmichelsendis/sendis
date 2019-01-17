@@ -8,6 +8,32 @@ server <- function(input, output, session){
   addClass(selector = "body", class = "sidebar-collapse")
 
 ##################
+  
+  userFile<-reactive({
+    
+    inFile <- input$file1
+    if (is.null(inFile)) return(NULL)
+    udf<-fread(inFile$datapath)
+    #udf$V1<-NULL
+    
+    mydata<-sendis::compile_to_sendis(udf)
+    sendis<<-mydata
+    mydata
+  })
+  
+  output$plotUserFile<-renderPlotly({
+    
+    udf<-userFile() 
+    validate(need(dim(udf)[1]!=0, "Upload a valid csv"))  
+    
+    p2<-plot_ly(udf, x = ~FULLID, y=~CALCVAL, type='scatter', mode='markers', color=~INST) 
+    p2
+    
+  })
+  
+  
+  
+  
 
   output$plot_isotopes<-renderPlotly({ 
     
@@ -80,6 +106,9 @@ server <- function(input, output, session){
 output$plot_cumul<-renderPlotly({ 
     
 # selecting data 
+    
+   df-userFile()  
+  
     if("All" %in% input$CASETYPE3) df<-filter(df, INST==input$INST3, LIBVER %in% input$LIB3)
     else df<-filter(df, INST==input$INST3, LIBVER %in% input$LIB3, CASETYPE%in% input$CASETYPE3)
     df<-filter(df, df$RESIDUAL<= input$MAXRES)
@@ -91,7 +120,7 @@ output$plot_cumul<-renderPlotly({
 #####################
   
   output$libs<-renderText({
-    
+    df<-userFile()
     df1<-filter(df, INST==input$INST4)
     df1<- df1[order(df1$LIBVER),]
     text<-paste(unique(df1$LIBVER), " ; ")
@@ -101,6 +130,7 @@ output$plot_cumul<-renderPlotly({
   #########################################################################
   
   output$plot_histo<-renderPlotly({ 
+    df<-userFile()
     df1<-filter(df, INST==input$INST4, LIBVER==input$LIBVER4)
     # validate(
     #    need(dim(df1)[1]>0,"No entries found for this combination of libraries and institution")
@@ -132,7 +162,7 @@ output$plot_cumul<-renderPlotly({
   ###################################################
   
   output$table<-renderDataTable({ 
-    
+    df<-userFile()
     df1<-filter(df, INST==input$INST4, LIBVER==input$LIBVER4)
     df2<-subset(df1, select=c('SHORTID', 'MODEL', 'EXPVAL', 'EXPERR', 'CALCVAL', 'CALCERR', 'COVERE'))
     validate(

@@ -17,7 +17,7 @@ compile_to_sendis<- function(df){
 err=check_format_errors(df)
   
 # build_derived_calcs will merge exps and calcs and compute other columns : 
-df<-build_derived_calcs(df)%>%build_splitcolumns()
+df<-df%>%build_derived_calcs()%>%build_splitcolumns()
 
 # Replacing Model "NA" by "Only" if necessary :
 df$MODEL[is.na(df$MODEL)] <- "Only"

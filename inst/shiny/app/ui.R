@@ -30,6 +30,9 @@ body <- dashboardBody(
               fluidPage(withMathJax(),
                         
               tabBox(title=tagList(shiny::icon("send-o"), "v1.0"), width=12, 
+                     
+                     
+                     
                      tabPanel(tag('h4',"Sens Isotopes"),
                              fluidRow(
                                column(4,
@@ -142,6 +145,24 @@ body <- dashboardBody(
                     
                     tabPanel(tag('h4',"Data"),
                              
+                             box(width=0, title="User Data", color="gray", status="primary",solidHeader = TRUE, 
+                             fluidRow(column(3,
+                                                          titlePanel("Uploading Files"),
+                                                          wellPanel(
+                                                            fileInput('file1', 'Choose CSV File',
+                                                                      accept=c('text/csv', 
+                                                                               'text/comma-separated-values,text/plain', 
+                                                                               '.csv'))
+                                                          )),
+                                                   column(9, plotlyOutput('plotUserFile', height = '450px'))
+                                          ),
+                                          fluidRow(
+                                            column(12,
+                                                   dataTableOutput('userTable', height = gBoxPlotsHeight)
+                                            ))
+                                          
+                                 ),    
+                                 
                              box(width=0, title="Data Tables", color="gray", status="primary",solidHeader = TRUE, 
                                  
                                  fluidRow(

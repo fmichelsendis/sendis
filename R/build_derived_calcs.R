@@ -29,8 +29,9 @@ build_derived_calcs<- function(df){
   d$n<-NULL
   df2<-merge(df, d, by = c("INST", "LIBVER"))
    
+  data(exps)
   e<-exps%>%select(.data$FULLID, .data$MODEL, .data$EALF,  .data$AFGE, .data$EXPVAL, .data$EXPERR)
-  df2<-merge(df2, e)
+  df2<-merge(df2, e, by=c("FULLID", "MODEL"))
   
   df2<-df2%>%group_by(.data$INST, .data$LIBVER)%>%
     mutate(

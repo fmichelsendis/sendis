@@ -4,6 +4,7 @@
 #  Author: F.Michel-Sendis                  #
 #                                           #  
 #############################################
+
 if (system.file(package="DT") == "")          install.packages("DT")
 if (system.file(package="data.table") == "")  install.packages("data.table")
 if (system.file(package="dplyr") == "")       install.packages("dplyr")
@@ -32,8 +33,9 @@ library(shinythemes)
 library(shinyjs)  
 library(splitstackshape)
 library(devtools)
+library(sendis)
 })
 sens<-sendis::sens%>%arrange(ISOTOPE)
-df<-sendis::sendis
+#df<-sendis::sendis
  
 
