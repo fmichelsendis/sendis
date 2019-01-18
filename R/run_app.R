@@ -1,10 +1,10 @@
 #' Wrapper to launch the sendis Shiny app
 #' 
 #' @export
-runApp<- function() {
+runSendis<- function() {
   appDir <- system.file("shiny", "app", package = "sendis")
   if (appDir == "") {
-    stop("Could not find example directory. Try re-installing `mypackage`.", call. = FALSE)
+    stop("Could not find app directory. Try re-installing `sendis`.", call. = FALSE)
   }
   
   shiny::runApp(appDir, display.mode = "normal", launch.browser = TRUE)

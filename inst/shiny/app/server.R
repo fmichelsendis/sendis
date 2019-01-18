@@ -17,7 +17,7 @@ server <- function(input, output, session){
     #udf$V1<-NULL
     
     mydata<-sendis::compile_to_sendis(udf)
-    sendis<<-mydata
+    #sendis<<-mydata
     mydata
   })
   
@@ -88,14 +88,9 @@ server <- function(input, output, session){
     # revert rownames to columns 
     # df<-df%>%mutate(FULLID=rownames(.))
     
-    #quo_var <- quo(reaction_name)
-    #quo_var <- reaction_name
     p<-plot_ly(df, x=~KSENSTOT, y=~RESIDUAL, color=~LIBVER, text=~FULLID)
     p
     
-    #g<-ggplot(df, aes(x=!!quo_var, y=RESIDUAL, color=LIBVER))+geom_point() 
-    #g
-  
   })
   
   
@@ -107,7 +102,9 @@ output$plot_cumul<-renderPlotly({
     
 # selecting data 
     
-   df-userFile()  
+  df<-sendis
+  #if (!is.null(input$file1)) df<-userFile()  
+  
   
     if("All" %in% input$CASETYPE3) df<-filter(df, INST==input$INST3, LIBVER %in% input$LIB3)
     else df<-filter(df, INST==input$INST3, LIBVER %in% input$LIB3, CASETYPE%in% input$CASETYPE3)
@@ -130,7 +127,8 @@ output$plot_cumul<-renderPlotly({
   #########################################################################
   
   output$plot_histo<-renderPlotly({ 
-    df<-userFile()
+    #df<-userFile()
+    df<-sendis
     df1<-filter(df, INST==input$INST4, LIBVER==input$LIBVER4)
     # validate(
     #    need(dim(df1)[1]>0,"No entries found for this combination of libraries and institution")
@@ -162,16 +160,20 @@ output$plot_cumul<-renderPlotly({
   ###################################################
   
   output$table<-renderDataTable({ 
-    df<-userFile()
-    df1<-filter(df, INST==input$INST4, LIBVER==input$LIBVER4)
-    df2<-subset(df1, select=c('SHORTID', 'MODEL', 'EXPVAL', 'EXPERR', 'CALCVAL', 'CALCERR', 'COVERE'))
-    validate(
-      need(dim(df2)[1]>0,"No entries found for this combination of library and institution")
-    )
-    df2<-arrange(df2, SHORTID)%>%mutate(COVERE=round(COVERE,5))
+    #df<-userFile()
+    df<-sendis
+    df<-df%>%
+      filter(df, INST==input$INST4, LIBVER==input$LIBVER4)%>%
+      select(SHORTID, MODEL, EXPVAL, EXPERR, CALCVAL, CALCERR, COVERE)%>%
+      mutate(COVERE=round(COVERE,5))%>%
+      arrange(SHORTID)
     
-    if(dim(df2)[1]>0) datatable(df2, options=list(columnDefs = list(list(visible=FALSE, targets=c(0))))) 
-    df2
+    validate(
+      need(dim(df)[1]>0,"No entries found for this combination of library and institution")
+    )
+     
+    if(dim(df)[1]>0) datatable(df, options=list(columnDefs = list(list(visible=FALSE, targets=c(0))))) 
+    df
   })
  
 
