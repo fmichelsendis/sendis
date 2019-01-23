@@ -5,13 +5,6 @@
 #                                           #  
 #############################################
 
-#dtitle<-tags$a(href='http://www.sendis.org',
-#       tags$img(src='sendis.png', height='20'))
-
-#
-
-
-
 dtitle<-tags$img(src='./sendis.png', height='22')
 
 header <- dashboardHeader(title=dtitle)
@@ -49,9 +42,7 @@ body <- dashboardBody(
                                             column(4, offset=0, selectInput('INST',tag('h4', 'Institution'),
                                                                             unique(df$INST), 
                                                                             multiple=FALSE, selected="NEA"))
-                                            # column(4, offset=0, selectInput('LIBVER',tag('h4', 'Library'),
-                                            #                                 unique(df$LIBVER), 
-                                            #                                 multiple=FALSE, selected="JEFF-3.3"))
+                                            
                                             ),
                                           fluidRow(  
                                             column(12, 
@@ -62,22 +53,7 @@ body <- dashboardBody(
                                                                                  ))
                                                    ))
                                           )
-                                          # fluidRow(
-                                          #   column(6, offset=0, 
-                                          #          radioButtons("", label = h5("Select X axis"),
-                                          #                       choices = list("Total Sensitivity" = "KSENSTOT", "Case Type" = "CASETYPE"), 
-                                          #                       selected = "CASETYPE",inline = TRUE)),
-                                          #   column(6, offset=0, 
-                                          #          radioButtons("XAXIS", label = h5("Select X axis"),
-                                          #                       choices = list("Total Sensitivity" = "KSENSTOT", "Case Type" = "CASETYPE"), 
-                                          #                       selected = "CASETYPE",inline = TRUE))
-                                          # )
-                                          # fluidRow(
-                                          #   column(12, offset=0, sliderInput("KSENS_TRESH",
-                                          #                                    label = h4("Sensitivity Treshold"), min = 0,
-                                          #                                    max = 1, value = c(0, 0.5)))
-                                          #   )
-                                        
+                                          
                                           )
                                       ),
                                column(8,
@@ -213,7 +189,6 @@ dashboardHeader(disable = TRUE)
 dashboardPage(
   title = "Sendis App", 
   skin="black",
-  header,
-  #dashboardHeader(disable = TRUE),    
+  header,    
   sidebar,
   body)

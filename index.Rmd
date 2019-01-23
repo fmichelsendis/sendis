@@ -48,19 +48,14 @@ The **sendis** R package provides datasets and functions to expedite common task
 
 ## Background
 
-The ability of a nuclear data library to accurately reproduce, in particle-transport simulations, the observables of integral benchmark experiments plays a decisive role in the data validation process. Under the term *benchmarking*, the analyst tries to answer the following questions : 
+The ability of a nuclear data library to accurately reproduce, in particle-transport simulations, the observables of integral *benchmark* experiments plays a decisive role in the data validation process. 
 
-* How do different nuclear data libraries, different versions of the same library or different candidate files compare in terms of integral performance? 
-* How do two assessments provided by two different benchmarking *suites* compare to each other?
-* How to spot general trends and outliers? 
+* How do different nuclear data libraries compare in terms of integral performance? 
+* How do different benchmarking *suites* compare to each other?
+* How to easily spot general trends and outliers? 
 
 For the comparison of critical benchmarking, some helpful tools that help with the questions above have been developed in this package.  
 
-### Sources 
-
-
-* [DICE](https://www.oecd-nea.org/science/wpncs/icsbep/dice.html) (OECD NEA)
- 
 ## Examples
 
 Interactive graphs are easily rendered using plotly : 
@@ -114,7 +109,6 @@ sendis::plot_cumulchi(df)
 ```
   
  
-
 ## The sendis app 
 
 For seeing trends and filtering through the data, an interactive Shiny application has been developed. 

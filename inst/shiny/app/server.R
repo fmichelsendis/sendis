@@ -9,27 +9,20 @@ server <- function(input, output, session){
 
 ##################
   
-  userFile<-reactive({
-    
-    inFile <- input$file1
-    if (is.null(inFile)) return(NULL)
-    udf<-fread(inFile$datapath)
-    #udf$V1<-NULL
-    
-    mydata<-sendis::compile_to_sendis(udf)
-    #sendis<<-mydata
-    mydata
-  })
+  # userFile<-reactive({
+  #   inFile <- input$file1
+  #   if (!is.null(inFile)){
+  #     udf<-fread(inFile$datapath)
+  #     mydata<-sendis::compile_to_sendis(udf)
+  #     return(mydata)
+  #     }
+  # })
   
   output$plotUserFile<-renderPlotly({
-    
-    udf<-userFile() 
-    validate(need(dim(udf)[1]!=0, "Upload a valid csv"))  
-    
-    p2<-plot_ly(udf, x = ~FULLID, y=~CALCVAL, type='scatter', mode='markers', color=~INST) 
-    p2
-    
-  })
+    ##udf<-userFile() 
+    ##validate(need(dim(udf)[1]!=0, "Upload a valid csv"))  
+    #plot_ly(udf, x = ~FULLID, y=~CALCVAL, type='scatter', mode='markers', color=~INST) 
+   })
   
   
   
@@ -51,7 +44,7 @@ server <- function(input, output, session){
     data(sendis)
     r<-filter(sendis, INST==inst, LIBVER%in%lib_list, MODEL=="Only") %>%
       select(FULLID, LIBVER, INST, EALF, RESIDUAL)%>%
-      unique()
+     unique()
     
     data(mats)
     mats<-mats%>%
@@ -99,25 +92,18 @@ server <- function(input, output, session){
   
   
 output$plot_cumul<-renderPlotly({ 
-    
-# selecting data 
-    
   df<-sendis
   #if (!is.null(input$file1)) df<-userFile()  
-  
-  
-    if("All" %in% input$CASETYPE3) df<-filter(df, INST==input$INST3, LIBVER %in% input$LIB3)
-    else df<-filter(df, INST==input$INST3, LIBVER %in% input$LIB3, CASETYPE%in% input$CASETYPE3)
+  if("All" %in% input$CASETYPE3) df<-filter(df, INST==input$INST3, LIBVER %in% input$LIB3)
+  else df<-filter(df, INST==input$INST3, LIBVER %in% input$LIB3, CASETYPE%in% input$CASETYPE3)
     df<-filter(df, df$RESIDUAL<= input$MAXRES)
-    
     sendis::plot_cumulchi(df)
-    
     })
     
 #####################
   
   output$libs<-renderText({
-    df<-userFile()
+    df<-sendis
     df1<-filter(df, INST==input$INST4)
     df1<- df1[order(df1$LIBVER),]
     text<-paste(unique(df1$LIBVER), " ; ")
