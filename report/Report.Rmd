@@ -6,8 +6,8 @@ output:
     fig_caption: true
     number_sections: false
     df_print: kable 
-    includes:
-          in_header: styles/header.tex
+    #includes:
+    #      in_header: styles/header.tex
 fontsize: 11pt
 documentclass: article # or report
 sansfont: Helvetica #Calibri Light
@@ -39,7 +39,7 @@ library(scales)
 library(devtools)
 
 # Install and load the development version from GitHub:
-devtools::install_github("fmichelsendis/sendis")
+#devtools::install_github("fmichelsendis/sendis")
 library(sendis)
 
 return_kable<-function(df, caption=""){
@@ -74,6 +74,7 @@ k<-kable(df,
 
 
 ```{r echo = FALSE, results = 'asis', eval=TRUE}
+library(sendis)
 
 options(knitr.kable.NA = '')
 
@@ -194,7 +195,6 @@ p<-ggplot(df, aes(x=EVALCASE, y=COVERE)) +
     breaks = seq(-0.94, 1.12, by = 0.01),
     position = "bottom"
     )+
-  coord_flip() + 
   theme_bw()
  
 p

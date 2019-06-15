@@ -44,17 +44,17 @@ library(plotly)
 
 <br>
 
-The **sendis** R package provides datasets and functions to expedite common tasks in the comparison of integral benchmarking performance of nuclear data libraries.
+The **sendis** R package provides datasets and simple functions to expedite common tasks in the comparison of integral benchmarking performance of nuclear data libraries.
 
 ## Background
 
-The ability of a nuclear data library to accurately reproduce, in particle-transport simulations, the observables of integral *benchmark* experiments plays a decisive role in the data validation process. 
+The ability of a nuclear data library to accurately reproduce the observables of integral *benchmark* experiments in transport simulations plays a key role in the data validation process. 
 
-* How do different nuclear data libraries compare in terms of integral performance? 
-* How do different benchmarking *suites* compare to each other?
-* How to easily spot general trends and outliers? 
+* How to consistently compare different nuclear data libraries in terms of integral performance? 
+* How do different benchmarking *suites* compare to each other in terms of how they rank the different libraries ?
+* In general, how to easily spot general trends and outliers? 
 
-For the comparison of critical benchmarking, some helpful tools that help with the questions above have been developed in this package.  
+Some helpful tools that help with the questions above have been developed in this package.  
 
 ## Examples
 
